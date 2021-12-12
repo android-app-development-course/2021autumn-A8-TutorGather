@@ -1,4 +1,4 @@
-package com.example.mobile_phone
+package com.example.mobile_phone.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
+import com.example.mobile_phone.R
+import com.example.mobile_phone.adapter.OrderAdapter
+import com.example.mobile_phone.bean.Order
 import com.example.mobile_phone.databinding.FragmentFirstBinding
-import java.util.*
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -27,25 +27,20 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
-
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val journalVec = Storage.getAllJournal()
-        val titleList = mutableListOf<String>()
 
-        for (journal in journalVec){
-            titleList.add(journal.title)
-        }
+        val orderList = listOf(Order("小明", "编程老师速来", "一年级", R.mipmap.ic_launcher))
 
-        val adapter = ArrayAdapter(this.requireContext(), android.R.layout.simple_list_item_1, titleList.toList())
+        val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
         binding.listView.adapter = adapter
 
         binding.listView.setOnItemClickListener {parent, _view, position, id ->
-            setFragmentResult("requestKey", bundleOf("journalId" to journalVec[position].id))
+//            setFragmentResult("requestKey", bundleOf("journalId" to journalVec[position].id))
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 

@@ -1,7 +1,6 @@
 package com.example.mobile_phone
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -9,7 +8,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import androidx.navigation.fragment.findNavController
+import com.example.mobile_phone.SQLite.StorageSetting
 import com.example.mobile_phone.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,8 +18,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // 设置数据库
-        Storage.init(StorageSetting(this.baseContext, "Journal.db", 1).writableDatabase)
         System.out.println("sqllite is init")
 
         binding = ActivityMainBinding.inflate(layoutInflater)

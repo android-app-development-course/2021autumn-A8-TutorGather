@@ -1,4 +1,4 @@
-package com.example.mobile_phone
+package com.example.mobile_phone.SQLite
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
