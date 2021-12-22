@@ -12,7 +12,9 @@ import com.example.mobile_phone.adapter.BannerAdapter
 import com.example.mobile_phone.adapter.OrderAdapter
 import com.example.mobile_phone.bean.Order
 import com.example.mobile_phone.databinding.FragmentHeaderBinding
+import com.example.mobile_phone.webData.OrderWebData
 import com.to.aboomy.pager2banner.IndicatorView
+import kotlin.concurrent.thread
 
 
 /**
@@ -20,7 +22,8 @@ import com.to.aboomy.pager2banner.IndicatorView
  */
 class HeaderFragment : Fragment() {
     private var _binding: FragmentHeaderBinding? = null
-
+    private val ordersList:ArrayList<Order> = ArrayList<Order>()
+    private lateinit var orderAdapter:OrderAdapter
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -31,22 +34,13 @@ class HeaderFragment : Fragment() {
     ): View {
         _binding = FragmentHeaderBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val orderList = listOf(
-            Order("Root", "编程老师速来", "一年级", R.mipmap.ic_launcher),
-            Order("小明", "编程老师速来", "一年级", R.mipmap.ic_launcher)
-        )
-
-        val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
-        binding.listView.adapter = adapter
-
+        orderAdapter = OrderAdapter(this.requireContext(), R.layout.order_item, ordersList)
+        binding.listView.adapter = orderAdapter
         binding.listView.setOnItemClickListener { parent, _view, position, id ->
-//            setFragmentResult("requestKey", bundleOf("journalId" to journalVec[position].id))
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 
@@ -60,6 +54,28 @@ class HeaderFragment : Fragment() {
         val bannerAdapter = BannerAdapter(imageId)
         //传入RecyclerView.Adapter 即可实现无限轮播
         binding.banner.setIndicator(indicator).adapter = bannerAdapter
+        // 使用orderWebdata
+        thread{
+            try {
+                val orderWebData = OrderWebData()
+                // 不能修改ordersList的指向
+                for (order in orderWebData.getRandomOrders(5)){
+                    ordersList.add(order)
+                }
+                if(this.activity == null)
+                    println("this activity is null")
+                else {
+                    println("ordersList is change")
+                    this.activity?.runOnUiThread {
+                        orderAdapter.notifyDataSetChanged()
+
+                    }
+                }
+            }
+            catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
     override fun onDestroyView() {
