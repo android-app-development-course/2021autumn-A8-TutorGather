@@ -32,15 +32,15 @@ class MainActivity : AppCompatActivity() {
         //以下为订单管理页面的测试
         setContentView(R.layout.order_fragment)
         Sentbutton.setOnClickListener{
-            replaceFragment(OrderSentDetail())
+            replaceFragment(OrderDisplayFragment())
         }
         Acceptbutton.setOnClickListener{
-            replaceFragment(OrderAcceptDetail())
+            replaceFragment(OrderDisplayFragment())
         }
         Completedbutton.setOnClickListener{
-            replaceFragment(OrderCompleteDetail())
+            replaceFragment(OrderDisplayFragment())
         }
-        replaceFragment(OrderSentDetail())
+        replaceFragment(OrderDisplayFragment())
     }
 
     private fun replaceFragment(fragment: Fragment){

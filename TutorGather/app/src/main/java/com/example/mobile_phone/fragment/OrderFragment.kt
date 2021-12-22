@@ -10,13 +10,13 @@ class OrderFragment:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Sentbutton.setOnClickListener{
-            replaceFragment(OrderSentDetail())
+            replaceFragment(OrderDisplayFragment())
         }
         Acceptbutton.setOnClickListener{
-            replaceFragment(OrderAcceptDetail())
+            replaceFragment(OrderDisplayFragment())
         }
         Completedbutton.setOnClickListener{
-            replaceFragment(OrderCompleteDetail())
+            replaceFragment(OrderDisplayFragment())
         }
 
     }

@@ -8,30 +8,23 @@ import androidx.fragment.app.Fragment
 import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.OrderAdapter
 import com.example.mobile_phone.bean.Order
-import com.example.mobile_phone.databinding.FragmentHeaderBinding
-import kotlinx.android.synthetic.main.order_completedetail_fragment.*
+import kotlinx.android.synthetic.main.order_detail_fragement.*
 
-class OrderCompleteDetail:Fragment() {
-    private var _binding: FragmentHeaderBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
+class OrderDisplayFragment:Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.order_completedetail_fragment,container,false)
+        return inflater.inflate(R.layout.order_detail_fragement,container,false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val orderList = listOf(
-            Order("小蓝", "编程老师速来", "一年级", R.mipmap.ic_launcher),
-            Order("小紫", "编程老师速来", "一年级", R.mipmap.ic_launcher)
+            Order("小红", "编程老师速来，要求男，姓陈", "一年级", R.mipmap.ic_launcher),
+            Order("小明", "编程老师速来", "一年级", R.mipmap.ic_launcher)
         )
 
         val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
