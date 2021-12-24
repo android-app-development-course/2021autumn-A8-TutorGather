@@ -10,6 +10,8 @@ import okhttp3.Request
 import okhttp3.ResponseBody
 import kotlin.concurrent.thread
 import com.example.mobile_phone.enum.OrderStatus
+import okhttp3.FormBody
+
 class OrderWebData {
     private val urlPrefix = "http://120.24.195.28:8080"
 
@@ -19,7 +21,7 @@ class OrderWebData {
         return gson.fromJson(jsonData, typeOf)
     }
 
-    private fun connection(url:String):String? {
+    private fun getRequest(url:String):String? {
         val client = OkHttpClient()
         val request = Request.Builder()
             .url(url)
@@ -28,8 +30,18 @@ class OrderWebData {
         return response.body?.string()
     }
 
+    private fun postRequest(url:String, postBody: FormBody):String? {
+        val client = OkHttpClient()
+        val request = Request.Builder()
+            .url(url)
+            .post(postBody)
+            .build()
+        val response = client.newCall(request).execute()
+        return response.body?.string()
+    }
+
     fun getRandomOrders(number: Int): List<Order> {
-        val responseData = connection("$urlPrefix/getOrders?number=$number")
+        val responseData = getRequest("$urlPrefix/getOrders?number=$number")
         if (responseData != null) {
             println("getRandomOrders: $responseData")
             return parseJSONWithGSON(responseData)
@@ -39,7 +51,7 @@ class OrderWebData {
     }
 
     fun getOrdersByUserIdAndStatus(userId: Int, status:OrderStatus): List<Order> {
-        val responseData = connection("$urlPrefix/getOrders?number=$userId&status=$status")
+        val responseData = getRequest("$urlPrefix/getOrders?number=$userId&status=$status")
         if (responseData != null) {
             println("getOrdersByUserIdAndStatus: $responseData")
             return parseJSONWithGSON(responseData)
@@ -54,7 +66,7 @@ class OrderWebData {
     }
 
     fun getOrderByOrderId(orderId: Int): Order {
-        val responseData = connection("$urlPrefix/getOrder?orderId=$orderId")
+        val responseData = getRequest("$urlPrefix/getOrder?orderId=$orderId")
         if (responseData != null) {
             println("getOrdersByUserIdAndStatus: $responseData")
             return parseJSONWithGSON(responseData).first()
@@ -63,7 +75,29 @@ class OrderWebData {
         return Order()
     }
 
-    fun publishOrder(order: Order) {
+    fun publishOrder(order: Order):Boolean {
+        println(order)
+        val formBody = FormBody.Builder()
+            .add("subject", order.subject)
+            .add("grade", order.grade)
+            .add("abstract", order._abstract)
+            .add("startTime", order.startTime)
+            .add("endTime", order.endTime)
+            .add("address", order.address)
+            .add("detail", order.detail)
+            .add("expense", order.expense)
+            .add("phone", order.phone)
+            .add("belongId", order.belongId.toString())
+            .build()
+        val responseData = postRequest("$urlPrefix/publishOrder",formBody)
+        if(responseData != null) {
+            println("publish : $responseData")
+            return true
+        }
+        else {
+            println("publish error, responseData is null")
+            return false
+        }
 
     }
 

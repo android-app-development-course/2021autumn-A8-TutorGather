@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import androidx.fragment.app.Fragment
 import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.OrderAdapter
 import com.example.mobile_phone.bean.Order
-import kotlinx.android.synthetic.main.order_detail_fragement.*
+
 
 class OrderDisplayFragment:Fragment() {
     override fun onCreateView(
@@ -23,8 +24,8 @@ class OrderDisplayFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val orderList = listOf<Order>()
-
         val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
-        list_view.adapter=adapter
+        val listView = view.findViewById<ListView>(R.id.list_view)
+        listView.adapter=adapter
     }
 }

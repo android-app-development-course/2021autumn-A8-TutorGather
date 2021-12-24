@@ -24,7 +24,7 @@ class BannerAdapter(private val resourceId:List<Int>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.banner_item, viewGroup, false)
+            .inflate(R.layout.item_banner, viewGroup, false)
 
         return ViewHolder(view)
     }

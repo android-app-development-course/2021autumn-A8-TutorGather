@@ -36,6 +36,30 @@ class HeaderFragment : Fragment() {
         return binding.root
     }
 
+    private fun updateOrderList() {
+        thread {
+            if (ordersList.isEmpty()) {
+                try {
+                    val orderWebData = OrderWebData()
+                    // 不能修改ordersList的指向
+                    for (order in orderWebData.getRandomOrders(5)) {
+                        ordersList.add(order)
+                    }
+                    if (this.activity == null)
+                        println("this activity is null")
+                    else {
+                        println("ordersList is change")
+                        this.activity?.runOnUiThread {
+                            orderAdapter.notifyDataSetChanged()
+                        }
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         orderAdapter = OrderAdapter(this.requireContext(), R.layout.order_item, ordersList)
@@ -62,26 +86,13 @@ class HeaderFragment : Fragment() {
         binding.banner.setIndicator(indicator).adapter = bannerAdapter
         // 使用orderWebdata
         thread {
-            if (ordersList.isEmpty()) {
-                try {
-
-                    val orderWebData = OrderWebData()
-                    // 不能修改ordersList的指向
-                    for (order in orderWebData.getRandomOrders(5)) {
-                        ordersList.add(order)
-                    }
-                    if (this.activity == null)
-                        println("this activity is null")
-                    else {
-                        println("ordersList is change")
-                        this.activity?.runOnUiThread {
-                            orderAdapter.notifyDataSetChanged()
-
-                        }
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
+            updateOrderList()
+        }
+        // 设置刷新列表按钮
+        binding.imageButtonRenew.setOnClickListener {
+            ordersList.clear()
+            thread {
+                updateOrderList()
             }
         }
     }

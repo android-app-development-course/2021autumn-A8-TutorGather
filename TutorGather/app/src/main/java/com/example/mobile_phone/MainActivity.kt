@@ -11,7 +11,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.example.mobile_phone.databinding.ActivityMainBinding
 import com.example.mobile_phone.fragment.*
-import kotlinx.android.synthetic.main.order_select_fragment.*
+
 
 class MainActivity : AppCompatActivity() {
 

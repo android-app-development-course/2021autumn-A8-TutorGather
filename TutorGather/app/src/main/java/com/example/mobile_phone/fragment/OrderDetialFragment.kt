@@ -20,12 +20,7 @@ class OrderDetialFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Use the Kotlin extension in the fragment-ktx artifact
-        // 设置结果监听器
-//        setFragmentResultListener("requestKey") { requestKey, bundle ->
-//            order = Storage.getJournalById(bundle.getInt("journalId"))
-//            view!!.findViewById<EditText>(R.id.editTextTextTitle).setText(order.title)
-//            view!!.findViewById<EditText>(R.id.editTextCotent).setText(order.content)
-//        }
+
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
