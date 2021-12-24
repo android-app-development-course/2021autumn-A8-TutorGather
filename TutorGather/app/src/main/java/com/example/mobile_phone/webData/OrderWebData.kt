@@ -1,14 +1,10 @@
 package com.example.mobile_phone.webData
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import com.example.mobile_phone.bean.Order
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.ResponseBody
-import kotlin.concurrent.thread
 import com.example.mobile_phone.enum.OrderStatus
 class OrderWebData {
     private val urlPrefix = "http://120.24.195.28:8080"
@@ -38,8 +34,8 @@ class OrderWebData {
         return listOf()
     }
 
-    fun getOrdersByUserIdAndStatus(userId: Int, status:OrderStatus): List<Order> {
-        val responseData = connection("$urlPrefix/getOrders?number=$userId&status=$status")
+    fun getOrdersByUserIdAndStatus(userId: Int, status: Int): List<Order> {
+        val responseData = connection("$urlPrefix/getOrders?userId=$userId&status=$status")
         if (responseData != null) {
             println("getOrdersByUserIdAndStatus: $responseData")
             return parseJSONWithGSON(responseData)

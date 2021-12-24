@@ -4,19 +4,20 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.mobile_phone.R
+import com.example.mobile_phone.bean.User
 import kotlinx.android.synthetic.main.order_select_fragment.*
 
 class OrderFragment:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Sentbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment())
+            replaceFragment(OrderDisplayFragment(1))
         }
         Acceptbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment())
+            replaceFragment(OrderDisplayFragment(1))
         }
         Completedbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment())
+            replaceFragment(OrderDisplayFragment(1))
         }
 
     }
