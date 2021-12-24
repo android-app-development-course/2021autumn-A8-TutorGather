@@ -29,18 +29,18 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        //以下为订单管理页面的测试
-        setContentView(R.layout.order_fragment)
-        Sentbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment())
-        }
-        Acceptbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment())
-        }
-        Completedbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment())
-        }
-        replaceFragment(OrderDisplayFragment())
+//        //以下为订单管理页面的测试
+//        setContentView(R.layout.order_fragment)
+//        Sentbutton.setOnClickListener{
+//            replaceFragment(OrderDisplayFragment())
+//        }
+//        Acceptbutton.setOnClickListener{
+//            replaceFragment(OrderDisplayFragment())
+//        }
+//        Completedbutton.setOnClickListener{
+//            replaceFragment(OrderDisplayFragment())
+//        }
+//        replaceFragment(OrderDisplayFragment())
     }
 
     private fun replaceFragment(fragment: Fragment){
