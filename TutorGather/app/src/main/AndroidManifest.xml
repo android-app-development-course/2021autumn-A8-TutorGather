@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
+    package="com.example.mobile_phone">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mobile_phone">
+
+        <activity
+            android:name=".personal.LoginActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Mobile_phone.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".personal.RegisterActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Mobile_phone.NoActionBar">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Mobile_phone.NoActionBar">
+=======
         package="com.example.mobile_phone">
 
     <uses-permission  android:name="android.permission.INTERNET" />
@@ -17,6 +47,7 @@
                 android:label="@string/app_name"
                 android:theme="@style/Theme.Mobile_phone.NoActionBar"
                 android:exported="false">
+>>>>>>> 3c2215d51efffde2516d6c3cc94014acaaf0f2c5
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
