@@ -29,6 +29,7 @@ class OrderWebData {
     }
 
     fun getRandomOrders(number: Int): List<Order> {
+        // http://120.24.195.28:8080/getUser?userId=1
         val responseData = connection("$urlPrefix/getOrders?number=$number")
         if (responseData != null) {
             println("getRandomOrders: $responseData")

@@ -28,9 +28,13 @@ class PublishFragment : Fragment(R.layout.fragment_publish)  {
         super.onViewCreated(view, savedInstanceState)
     }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    // 处理
+    private val GRADE = arrayOf(
+        "高一", "高二", "高三", "初一", "Spain"
+    )
 }
