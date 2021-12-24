@@ -22,10 +22,7 @@ class OrderDisplayFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val orderList = listOf(
-            Order("小红", "编程老师速来，要求男，姓陈", "一年级", R.mipmap.ic_launcher),
-            Order("小明", "编程老师速来", "一年级", R.mipmap.ic_launcher)
-        )
+        val orderList = listOf<Order>()
 
         val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
         list_view.adapter=adapter

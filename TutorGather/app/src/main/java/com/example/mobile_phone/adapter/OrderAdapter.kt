@@ -1,7 +1,6 @@
 package com.example.mobile_phone.adapter
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -21,17 +20,17 @@ class OrderAdapter(context:Context, private val resourceId:Int, data:List<Order>
         else
             view = convertView
 
-        val userName: TextView = view.findViewById(R.id.textViewUserName)
+        val subjectName: TextView = view.findViewById(R.id.textViewSubject)
         val userImage: ImageView = view.findViewById(R.id.imageViewUser)
         val abstract: TextView = view.findViewById(R.id.textViewAbstract)
         val grade: TextView = view.findViewById(R.id.textViewGrade)
         // 获取当前order的数据 并放置order信息到item中
         val order = getItem(position)
         if(order != null){
-            userName.text = order.userName
-            abstract.text = order.abstract
+            subjectName.text = order.subject
+            abstract.text = order._abstract
             grade.text = order.grade
-            userImage.setImageResource(order.photoId)
+            userImage.setImageResource(order.imageResourceId)
         }
         return view;
     }
