@@ -68,8 +68,9 @@ class OrderWebData {
     fun getOrderByOrderId(orderId: Int): Order {
         val responseData = getRequest("$urlPrefix/getOrder?orderId=$orderId")
         if (responseData != null) {
-            println("getOrdersByUserIdAndStatus: $responseData")
-            return parseJSONWithGSON(responseData).first()
+//            Log.i(TAG, "getOrderById: $responseData, data: $responseData, \norderId$orderId")
+            val gson = Gson()
+            return gson.fromJson(responseData, Order::class.java)
         }
         println("orderId: $orderId is null")
         return Order()

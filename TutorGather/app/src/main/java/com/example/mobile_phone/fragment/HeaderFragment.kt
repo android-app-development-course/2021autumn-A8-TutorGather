@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.BannerAdapter
@@ -64,15 +66,11 @@ class HeaderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         orderAdapter = OrderAdapter(this.requireContext(), R.layout.order_item, ordersList)
         // 绑定订单列表
-        binding.listView.adapter = orderAdapter
-//        binding.listView.setOnItemClickListener { parent, _view, position, id ->
-//            findNavController().navigate(R.id.action_fragment_header_to_fragment_publish)
-//        }
+        binding.orderListView.adapter = orderAdapter
         // 绑定发布按钮跳转
         binding.buttonPublish.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_header_to_fragment_publish)
         }
-
 
         //使用内置Indicator
         val indicator = IndicatorView(this.requireActivity())
@@ -80,20 +78,25 @@ class HeaderFragment : Fragment() {
             .setIndicatorSelectorColor(Color.WHITE)
 
         val imageId = listOf(R.drawable.banner_image_1, R.drawable.banner_image_2)
-        //创建adapter
+        //创建轮播图adapter
         val bannerAdapter = BannerAdapter(imageId)
         //传入RecyclerView.Adapter 即可实现无限轮播
         binding.banner.setIndicator(indicator).adapter = bannerAdapter
-        // 使用orderWebdata
+        // 使用orderWebData更新orderList数据
         thread {
             updateOrderList()
         }
-        // 设置刷新列表按钮
+        // 绑定刷新列表按钮
         binding.imageButtonRenew.setOnClickListener {
             ordersList.clear()
             thread {
                 updateOrderList()
             }
+        }
+        // 绑定orderList的点击事件
+        binding.orderListView.setOnItemClickListener { parent, _view, position, id ->
+            setFragmentResult("requestKey", bundleOf("orderId" to ordersList[position].id))
+            findNavController().navigate(R.id.action_fragment_header_to_fragment_detail)
         }
     }
 

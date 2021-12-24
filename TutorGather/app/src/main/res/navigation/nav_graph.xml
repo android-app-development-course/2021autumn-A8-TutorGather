@@ -6,6 +6,10 @@
             tools:layout="@layout/fragment_header">
 
         <action android:id="@+id/action_fragment_header_to_fragment_publish" app:destination="@id/fragment_publish" />
+        <action
+                android:id="@+id/action_fragment_header_to_fragment_detail"
+                app:destination="@id/fragment_detail" />
+
     </fragment>
 
     <fragment android:id="@+id/fragment_publish" android:name="com.example.mobile_phone.fragment.PublishFragment" android:label="订单发布"
@@ -14,4 +18,10 @@
         <action android:id="@+id/action_fragment_publish_to_fragment_header" app:destination="@id/fragment_header" />
     </fragment>
 
+
+    <fragment android:id="@+id/fragment_detail" android:name="com.example.mobile_phone.fragment.DetailFragment" android:label="订单详情"
+            tools:layout="@layout/fragment_orderdetail">
+
+        <action android:id="@+id/action_fragment_publish_to_fragment_header" app:destination="@id/fragment_header" />
+    </fragment>
 </navigation>

@@ -25,7 +25,7 @@ class OrderDisplayFragment:Fragment() {
 
         val orderList = listOf<Order>()
         val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
-        val listView = view.findViewById<ListView>(R.id.list_view)
+        val listView = view.findViewById<ListView>(R.id.orderListView)
         listView.adapter=adapter
     }
 }
