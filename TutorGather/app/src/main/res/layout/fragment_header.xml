@@ -5,6 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:id="@+id/fragment_header"
         tools:context=".fragment.HeaderFragment">
 
     <com.to.aboomy.pager2banner.Banner
@@ -14,11 +15,20 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="55dp" />
 
+    <Button
+            android:id="@+id/buttonPublish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            android:text="发布订单" />
+
     <ListView
-            android:layout_marginTop="20dp"
             android:id="@+id/list_view"
             android:layout_width="match_parent"
-            android:layout_height="600dp" />
+            android:layout_height="500dp"
+            android:layout_marginTop="10dp" />
 
 
 </LinearLayout>

@@ -13,7 +13,7 @@ android {
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
-
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -39,6 +39,7 @@ repositories {
 }
 
 dependencies {
+
     implementation group: 'androidx.fragment', name: 'fragment-ktx', version: '1.4.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'
