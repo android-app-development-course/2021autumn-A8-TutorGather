@@ -5,6 +5,8 @@
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.11770833333333333" />
         <entry key="../../../Library/Android/sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.18478260869565216" />
+        <entry key="..\:/Projects/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_login.xml" value="0.178125" />
+        <entry key="..\:/Projects/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_register.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/shape.xml" value="0.159375" />
         <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_main.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/banner_item.xml" value="0.14322916666666666" />
@@ -20,6 +22,8 @@
         <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_select_fragment.xml" value="0.4" />
         <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_sentdetail_fragement.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/menu/menu_main.xml" value="0.536" />
+        <entry key="..\:/Users/Warddamn/Desktop/Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/shape.xml" value="0.159375" />
+        <entry key="..\:/Users/Warddamn/Desktop/Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_select_fragment.xml" value="0.536" />
         <entry key="app/src/main/res/drawable/baseline_tips_and_updates_green_500_24dp.xml" value="0.3446153846153846" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3446153846153846" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12834224598930483" />
@@ -54,7 +58,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android API 30 Platform" project-jdk-type="Android SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android API 30 Platform" project-jdk-type="Android SDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

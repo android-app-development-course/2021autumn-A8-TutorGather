@@ -1,7 +1,12 @@
 package com.example.mobile_phone
 
+<<<<<<< HEAD
 import android.annotation.SuppressLint
+=======
+import android.os.Build
+>>>>>>> c03b6983e250f4bcc862cf64babc03330151d19a
 import android.os.Bundle
+import android.os.StrictMode
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -10,11 +15,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import com.example.mobile_phone.bean.User
 import com.example.mobile_phone.databinding.ActivityMainBinding
-import com.example.mobile_phone.fragment.*
-import com.google.android.material.bottomnavigation.BottomNavigationView
-
+import com.example.mobile_phone.fragment.OrderDisplayFragment;
+import kotlinx.android.synthetic.main.order_select_fragment.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+<<<<<<< HEAD
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.item1 -> {
@@ -56,6 +61,25 @@ class MainActivity : AppCompatActivity() {
 //            replaceFragment(OrderDisplayFragment())
 //        }
 //        replaceFragment(OrderDisplayFragment())
+=======
+        if (Build.VERSION.SDK_INT > 9) {
+            val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+            StrictMode.setThreadPolicy(policy)
+        }
+
+        //以下为订单管理页面的测试
+        setContentView(R.layout.order_fragment)
+        Sentbutton.setOnClickListener{
+            replaceFragment(OrderDisplayFragment(0))
+        }
+        Acceptbutton.setOnClickListener{
+            replaceFragment(OrderDisplayFragment(1))
+        }
+        Completedbutton.setOnClickListener{
+            replaceFragment(OrderDisplayFragment(2))
+        }
+        replaceFragment(OrderDisplayFragment(0))
+>>>>>>> c03b6983e250f4bcc862cf64babc03330151d19a
     }
 
     private fun replaceFragment(fragment: Fragment){

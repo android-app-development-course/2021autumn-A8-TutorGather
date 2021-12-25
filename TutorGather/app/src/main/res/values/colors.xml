@@ -32,4 +32,11 @@
     <color name="palevioletred">#db7093</color><!--苍紫罗兰色 -->
     <color name="darkviolet">#9400d3</color><!--暗紫罗兰色 -->
     <color name="mediumorchid">#ba55d3</color><!--中粉紫色 -->
+
+    <color name="green_tea">#FFC7F9CC</color>
+    <color name="green_light">#FF80ED99</color>
+    <color name="green_medium">#FF35AC78</color>
+    <color name="blue_cadet">#FF38A3A5</color>
+    <color name="blue_dark">#FF22577A</color>
+    <color name="slight_green">#FFF6FEF7</color>
 </resources>
