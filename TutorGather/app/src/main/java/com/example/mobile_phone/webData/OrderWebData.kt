@@ -46,13 +46,9 @@ class OrderWebData {
         return listOf()
     }
 
-<<<<<<< HEAD
+
     fun getOrdersByUserIdAndStatus(userId: Int, status:OrderStatus): List<Order> {
         val responseData = getRequest("$urlPrefix/getOrders?number=$userId&status=$status")
-=======
-    fun getOrdersByUserIdAndStatus(userId: Int, status: Int): List<Order> {
-        val responseData = connection("$urlPrefix/getOrders?userId=$userId&status=$status")
->>>>>>> c03b6983e250f4bcc862cf64babc03330151d19a
         if (responseData != null) {
             println("getOrdersByUserIdAndStatus: $responseData")
             return parseJSONWithGSON(responseData)
