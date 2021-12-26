@@ -17,7 +17,7 @@ class OrderWebData {
         return gson.fromJson(jsonData, typeOf)
     }
 
-    private fun getRequest(url:String):String? {
+    private fun getRequest(url: String): String? {
         val client = OkHttpClient()
         val request = Request.Builder()
             .url(url)
@@ -26,7 +26,7 @@ class OrderWebData {
         return response.body?.string()
     }
 
-    private fun postRequest(url:String, postBody: FormBody):String? {
+    private fun postRequest(url: String, postBody: FormBody): String? {
         val client = OkHttpClient()
         val request = Request.Builder()
             .url(url)
@@ -46,8 +46,7 @@ class OrderWebData {
         return listOf()
     }
 
-
-    fun getOrdersByUserIdAndStatus(userId: Int, status:OrderStatus): List<Order> {
+    fun getOrdersByUserIdAndStatus(userId: Int, status: OrderStatus): List<Order> {
         val responseData = getRequest("$urlPrefix/getOrders?number=$userId&status=$status")
         if (responseData != null) {
             println("getOrdersByUserIdAndStatus: $responseData")
@@ -58,7 +57,7 @@ class OrderWebData {
 
     }
 
-    fun getOrdersByTeacherIdAndStatus(teacherId: Int, status:OrderStatus): List<Order> {
+    fun getOrdersByTeacherIdAndStatus(teacherId: Int, status: OrderStatus): List<Order> {
         TODO()
     }
 
@@ -73,7 +72,7 @@ class OrderWebData {
         return Order()
     }
 
-    fun publishOrder(order: Order):Boolean {
+    fun publishOrder(order: Order): Boolean {
         println(order)
         val formBody = FormBody.Builder()
             .add("subject", order.subject)
@@ -87,12 +86,11 @@ class OrderWebData {
             .add("phone", order.phone)
             .add("belongId", order.belongId.toString())
             .build()
-        val responseData = postRequest("$urlPrefix/publishOrder",formBody)
-        if(responseData != null) {
+        val responseData = postRequest("$urlPrefix/publishOrder", formBody)
+        if (responseData != null) {
             println("publish : $responseData")
             return true
-        }
-        else {
+        } else {
             println("publish error, responseData is null")
             return false
         }

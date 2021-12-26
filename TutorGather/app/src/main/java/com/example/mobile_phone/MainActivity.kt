@@ -1,10 +1,6 @@
 package com.example.mobile_phone
 
-<<<<<<< HEAD
 import android.annotation.SuppressLint
-=======
-import android.os.Build
->>>>>>> c03b6983e250f4bcc862cf64babc03330151d19a
 import android.os.Bundle
 import android.os.StrictMode
 import androidx.appcompat.app.AppCompatActivity
@@ -15,10 +11,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import com.example.mobile_phone.bean.User
 import com.example.mobile_phone.databinding.ActivityMainBinding
-import com.example.mobile_phone.fragment.OrderDisplayFragment;
-import kotlinx.android.synthetic.main.order_select_fragment.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,53 +27,26 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-<<<<<<< HEAD
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.item1 -> {
-                    true
+
+        // 用于底部按钮栏触发事件
+        val bottomNavigation:BottomNavigationView = findViewById(R.id.bottom_navigation)
+        bottomNavigation.setOnItemSelectedListener{
+            menuitem ->
+            when(menuitem.itemId) {
+                R.id.page_manger -> {
+                    navController.navigate(R.id.action_global_to_orderFragment)
                 }
-                R.id.item2 -> {
-                    // Respond to navigation item 2 click
-                    true
-                }
-                else -> false
             }
-        }
-//        //以下为订单管理页面的测试
-//        setContentView(R.layout.order_fragment)
-//        Sentbutton.setOnClickListener{
-//            replaceFragment(OrderDisplayFragment())
-//        }
-//        Acceptbutton.setOnClickListener{
-//            replaceFragment(OrderDisplayFragment())
-//        }
-//        Completedbutton.setOnClickListener{
-//            replaceFragment(OrderDisplayFragment())
-//        }
-//        replaceFragment(OrderDisplayFragment())
-=======
-        if (Build.VERSION.SDK_INT > 9) {
-            val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
-            StrictMode.setThreadPolicy(policy)
+            true
         }
 
-        //以下为订单管理页面的测试
-        setContentView(R.layout.order_fragment)
-        Sentbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment(0))
-        }
-        Acceptbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment(1))
-        }
-        Completedbutton.setOnClickListener{
-            replaceFragment(OrderDisplayFragment(2))
-        }
-        replaceFragment(OrderDisplayFragment(0))
->>>>>>> c03b6983e250f4bcc862cf64babc03330151d19a
+
+        val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
     }
 
     private fun replaceFragment(fragment: Fragment){
@@ -109,5 +76,11 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+    private fun changeCurrentFragment(targetFragment: Fragment) {
+//        val transaction = supportFragmentManager.beginTransaction()
+////        transaction.replace(, targetFragment,null)
+//        transaction.commit()
+
     }
 }
