@@ -1,210 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/fragment_publish"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    <TextView
-            android:id="@+id/textViewLabelGrade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="孩子所在年级"
-            android:textSize="@dimen/order_labelTextSize"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.127"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022"
-            tools:ignore="SpUsage" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_publish"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <MultiAutoCompleteTextView
-            android:id="@+id/multiAutoCompleteTextViewGrade"
-            android:layout_width="@dimen/order_inputWidth"
-            android:layout_height="@dimen/order_inputHeight"
-            android:layout_marginTop="12dp"
-            android:hint="高一"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textViewLabelGrade"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelGrade"
-            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+                android:id="@+id/textViewLabelGrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="孩子所在年级"
+                android:textSize="@dimen/order_labelTextSize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.127"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.022"
+                tools:ignore="SpUsage" />
 
-    <TextView
-            android:id="@+id/textViewLabelSubject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="科目"
-            android:textSize="@dimen/order_labelTextSize"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/multiAutoCompleteTextViewGrade"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/multiAutoCompleteTextViewGrade"
-            app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextViewGrade"
-            app:layout_constraintVertical_bias="0.012" />
+        <MultiAutoCompleteTextView
+                android:id="@+id/multiAutoCompleteTextViewGrade"
+                android:layout_width="@dimen/order_inputWidth"
+                android:layout_height="@dimen/order_inputHeight"
+                android:layout_marginTop="12dp"
+                android:hint="高一"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelGrade"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelGrade"
+                app:layout_constraintVertical_bias="0.0" />
 
-    <MultiAutoCompleteTextView
-            android:id="@+id/multiAutoCompleteTextViewSubject"
-            android:layout_width="@dimen/order_inputWidth"
-            android:layout_height="@dimen/order_inputHeight"
-            android:layout_marginTop="12dp"
-            android:hint="语文"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/multiAutoCompleteTextViewGrade"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textViewLabelSubject"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelSubject"
-            app:layout_constraintVertical_bias="0.008" />
+        <TextView
+                android:id="@+id/textViewLabelSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="科目"
+                android:textSize="@dimen/order_labelTextSize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/multiAutoCompleteTextViewGrade"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/multiAutoCompleteTextViewGrade"
+                app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextViewGrade"
+                app:layout_constraintVertical_bias="0.012" />
 
-    <TextView
-            android:id="@+id/textViewLabelAbstract"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="要点"
-            android:textSize="@dimen/order_labelTextSize"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/multiAutoCompleteTextViewSubject"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/multiAutoCompleteTextViewSubject"
-            app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextViewSubject"
-            app:layout_constraintVertical_bias="0.0" />
+        <MultiAutoCompleteTextView
+                android:id="@+id/multiAutoCompleteTextViewSubject"
+                android:layout_width="@dimen/order_inputWidth"
+                android:layout_height="@dimen/order_inputHeight"
+                android:layout_marginTop="12dp"
+                android:hint="语文"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/multiAutoCompleteTextViewGrade"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelSubject"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelSubject"
+                app:layout_constraintVertical_bias="0.008" />
 
-    <EditText
-            android:id="@+id/editTextTextMultiLineAbstract"
-            android:layout_width="@dimen/order_inputWidth"
-            android:layout_height="70dp"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/multiAutoCompleteTextViewSubject"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textViewLabelAbstract"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelAbstract"
-            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+                android:id="@+id/textViewLabelAbstract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="要点"
+                android:textSize="@dimen/order_labelTextSize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/multiAutoCompleteTextViewSubject"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/multiAutoCompleteTextViewSubject"
+                app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextViewSubject"
+                app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-            android:id="@+id/imageViewHintSubject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="132dp"
-            android:layout_marginLeft="132dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewLabelSubject"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
-            app:layout_constraintStart_toEndOf="@+id/textViewLabelSubject"
-            app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextViewGrade"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/baseline_live_help_green_500_24dp" />
+        <EditText
+                android:id="@+id/editTextTextMultiLineAbstract"
+                android:layout_width="@dimen/order_inputWidth"
+                android:layout_height="70dp"
+                android:layout_marginTop="12dp"
+                android:hint="限20字内"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/multiAutoCompleteTextViewSubject"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelAbstract"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelAbstract"
+                app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-            android:id="@+id/imageViewLocation"
-            android:layout_width="35dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLineAbstract"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLineAbstract"
-            app:layout_constraintVertical_bias="0.012"
-            app:srcCompat="@drawable/baseline_location_on_green_500_24dp" />
+        <ImageView
+                android:id="@+id/imageViewHintSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="132dp"
+                android:layout_marginLeft="132dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewLabelSubject"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.094"
+                app:layout_constraintStart_toEndOf="@+id/textViewLabelSubject"
+                app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextViewGrade"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/baseline_live_help_green_500_24dp" />
 
-    <EditText
-            android:id="@+id/editTextTextLocation"
-            android:layout_width="270dp"
-            android:layout_height="@dimen/order_inputHeight"
-            android:layout_marginBottom="204dp"
-            android:ems="10"
-            android:hint="地址"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLineAbstract"
-            app:layout_constraintHorizontal_bias="0.909"
-            app:layout_constraintStart_toEndOf="@+id/imageViewLocation"
-            app:layout_constraintTop_toTopOf="@+id/imageViewLocation"
-            app:layout_constraintVertical_bias="0.0" />
+        <ImageView
+                android:id="@+id/imageViewLocation"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLineAbstract"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLineAbstract"
+                app:layout_constraintVertical_bias="0.012"
+                app:srcCompat="@drawable/baseline_location_on_green_500_24dp" />
 
-    <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="271dp"
-            android:layout_height="@dimen/order_inputHeight"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="开始时间 : 结束时间"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextLocation"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewTime"
-            app:layout_constraintTop_toTopOf="@+id/imageViewTime"
-            app:layout_constraintVertical_bias="0.0" />
+        <EditText
+                android:id="@+id/editTextTextLocation"
+                android:layout_width="270dp"
+                android:layout_height="@dimen/order_inputHeight"
+                android:layout_marginBottom="204dp"
+                android:ems="10"
+                android:hint="地址"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLineAbstract"
+                app:layout_constraintHorizontal_bias="0.909"
+                app:layout_constraintStart_toEndOf="@+id/imageViewLocation"
+                app:layout_constraintTop_toTopOf="@+id/imageViewLocation"
+                app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-            android:id="@+id/imageViewTime"
-            android:layout_width="34dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewLocation"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imageViewLocation"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewLocation"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/baseline_access_time_filled_green_500_24dp" />
+        <EditText
+                android:id="@+id/editTextTime"
+                android:layout_width="271dp"
+                android:layout_height="@dimen/order_inputHeight"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="开始时间 : 结束时间"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTextLocation"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imageViewTime"
+                app:layout_constraintTop_toTopOf="@+id/imageViewTime"
+                app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-            android:id="@+id/textViewLabelDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:textSize="@dimen/order_labelTextSize"
-            android:text="详情"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imageViewTime"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-            app:layout_constraintVertical_bias="0.0" />
+        <ImageView
+                android:id="@+id/imageViewTime"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewLocation"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imageViewLocation"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLocation"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/baseline_access_time_filled_green_500_24dp" />
 
-    <EditText
-            android:id="@+id/editTextTextMultiLineDetail"
-            android:layout_width="325dp"
-            android:layout_height="96dp"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-            app:layout_constraintStart_toStartOf="@+id/textViewLabelDetail"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLabelDetail"
-            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+                android:id="@+id/textViewLabelDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="详情"
+                android:textSize="@dimen/order_labelTextSize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTime"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imageViewTime"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTime"
+                app:layout_constraintVertical_bias="0.19" />
 
-    <Button
-            android:id="@+id/buttonPublishConfirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="发布"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLineDetail"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLineDetail"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLineDetail"
-            app:layout_constraintVertical_bias="0.25" />
+        <EditText
+                android:id="@+id/editTextTextMultiLineDetail"
+                android:layout_width="325dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTime"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelDetail"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelDetail"
+                app:layout_constraintVertical_bias="0.072" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+                android:id="@+id/buttonPublishConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="发布"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLineDetail"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLineDetail"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLineDetail"
+                app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewTime"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/imageViewTime"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewTime"
+                app:layout_constraintVertical_bias="0.128"
+                app:srcCompat="@drawable/baseline_attach_money_green_500_24dp" />
+
+        <EditText
+                android:id="@+id/editTextExpense"
+                android:layout_width="267dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="300元/小时"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTime"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTime"
+                app:layout_constraintVertical_bias="0.08" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

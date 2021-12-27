@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/slight_green"
 
-    tools:context=".personal.RegisterActivity">
+    tools:context=".RegisterActivity">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

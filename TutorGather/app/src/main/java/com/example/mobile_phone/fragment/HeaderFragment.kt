@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.BannerAdapter
@@ -36,38 +38,12 @@ class HeaderFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        orderAdapter = OrderAdapter(this.requireContext(), R.layout.order_item, ordersList)
-        // 绑定订单列表
-        binding.listView.adapter = orderAdapter
-//        binding.listView.setOnItemClickListener { parent, _view, position, id ->
-//            findNavController().navigate(R.id.action_fragment_header_to_fragment_publish)
-//        }
-        // 绑定发布按钮跳转
-        binding.buttonPublish.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_header_to_fragment_publish)
-        }
-
-
-        //使用内置Indicator
-        val indicator = IndicatorView(this.requireActivity())
-            .setIndicatorColor(Color.DKGRAY)
-            .setIndicatorSelectorColor(Color.WHITE)
-
-        val imageId = listOf(R.drawable.banner_image_1, R.drawable.banner_image_2)
-        //创建adapter
-        val bannerAdapter = BannerAdapter(imageId)
-        //传入RecyclerView.Adapter 即可实现无限轮播
-        binding.banner.setIndicator(indicator).adapter = bannerAdapter
-        // 使用orderWebdata
+    private fun updateOrderList() {
         thread {
             if (ordersList.isEmpty()) {
                 try {
-
-                    val orderWebData = OrderWebData()
                     // 不能修改ordersList的指向
-                    for (order in orderWebData.getRandomOrders(5)) {
+                    for (order in OrderWebData.getRandomOrders(5)) {
                         ordersList.add(order)
                     }
                     if (this.activity == null)
@@ -76,13 +52,50 @@ class HeaderFragment : Fragment() {
                         println("ordersList is change")
                         this.activity?.runOnUiThread {
                             orderAdapter.notifyDataSetChanged()
-
                         }
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
             }
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        orderAdapter = OrderAdapter(this.requireContext(), R.layout.order_item, ordersList)
+        // 绑定订单列表
+        binding.orderListView.adapter = orderAdapter
+        // 绑定发布按钮跳转
+        binding.buttonPublish.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_header_to_fragment_publish)
+        }
+
+        //使用内置Indicator
+        val indicator = IndicatorView(this.requireActivity())
+            .setIndicatorColor(Color.DKGRAY)
+            .setIndicatorSelectorColor(Color.WHITE)
+
+        val imageId = listOf(R.drawable.banner_image_1, R.drawable.banner_image_2)
+        //创建轮播图adapter
+        val bannerAdapter = BannerAdapter(imageId)
+        //传入RecyclerView.Adapter 即可实现无限轮播
+        binding.banner.setIndicator(indicator).adapter = bannerAdapter
+        // 使用orderWebData更新orderList数据
+        thread {
+            updateOrderList()
+        }
+        // 绑定刷新列表按钮
+        binding.imageButtonRenew.setOnClickListener {
+            ordersList.clear()
+            thread {
+                updateOrderList()
+            }
+        }
+        // 绑定orderList的点击事件
+        binding.orderListView.setOnItemClickListener { parent, _view, position, id ->
+            setFragmentResult("requestKey", bundleOf("orderId" to ordersList[position].id))
+            findNavController().navigate(R.id.action_fragment_header_to_fragment_detail)
         }
     }
 
