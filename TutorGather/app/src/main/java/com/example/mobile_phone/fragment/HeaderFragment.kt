@@ -42,9 +42,8 @@ class HeaderFragment : Fragment() {
         thread {
             if (ordersList.isEmpty()) {
                 try {
-                    val orderWebData = OrderWebData()
                     // 不能修改ordersList的指向
-                    for (order in orderWebData.getRandomOrders(5)) {
+                    for (order in OrderWebData.getRandomOrders(5)) {
                         ordersList.add(order)
                     }
                     if (this.activity == null)

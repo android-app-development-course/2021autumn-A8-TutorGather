@@ -77,8 +77,7 @@ class PublishFragment : Fragment(R.layout.fragment_publish)  {
                     2
                 )
                 thread {
-                    val orderWebData: OrderWebData = OrderWebData()
-                    if(orderWebData.publishOrder(order)) {
+                    if(OrderWebData.publishOrder(order)) {
                         this.activity?.runOnUiThread {
                             Toast.makeText(this.context, "发布成功", Toast.LENGTH_SHORT).show()
                         }

@@ -8,32 +8,13 @@ import okhttp3.Request
 import com.example.mobile_phone.enum.OrderStatus
 import okhttp3.FormBody
 
-class OrderWebData {
-    private val urlPrefix = "http://120.24.195.28:8080"
-
+object OrderWebData: HttpConnect<Order>() {
+    private const val urlPrefix = "http://120.24.195.28:8080"
+    // 不要移动到HttpConnect中, 会因为无法识别泛型导致, gson转型出错
     private fun parseJSONWithGSON(jsonData: String): List<Order> {
         val gson = Gson()
         val typeOf = object : TypeToken<List<Order>>() {}.type
         return gson.fromJson(jsonData, typeOf)
-    }
-
-    private fun getRequest(url: String): String? {
-        val client = OkHttpClient()
-        val request = Request.Builder()
-            .url(url)
-            .build()
-        val response = client.newCall(request).execute()
-        return response.body?.string()
-    }
-
-    private fun postRequest(url: String, postBody: FormBody): String? {
-        val client = OkHttpClient()
-        val request = Request.Builder()
-            .url(url)
-            .post(postBody)
-            .build()
-        val response = client.newCall(request).execute()
-        return response.body?.string()
     }
 
     fun getRandomOrders(number: Int): List<Order> {

@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.OrderAdapter
 import com.example.mobile_phone.bean.Order
+import com.example.mobile_phone.bean.User
 import com.example.mobile_phone.webData.OrderWebData
 import kotlinx.android.synthetic.main.order_detail_fragement.*
-import com.example.mobile_phone.bean.User
 import com.example.mobile_phone.enum.OrderStatus
 
 class OrderDisplayFragment(i: Int) : Fragment() {
@@ -28,7 +27,7 @@ class OrderDisplayFragment(i: Int) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (orderparam == 0) {
-            if (User.userstatus) {
+            if (User.canBeTeacher) {
                 val orderList = listOf(
                     Order(subject = "该身份权限访问！"),
                 )
@@ -36,21 +35,21 @@ class OrderDisplayFragment(i: Int) : Fragment() {
                 orderListView.adapter = adapter
 
             } else {
-                print(User.userId)
-                val orderList = OrderWebData().getOrdersByUserIdAndStatus(User.userId, OrderStatus.DRAFT)
+                print(User.id)
+                val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.DRAFT)
                 print(orderList)
                 val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
                 orderListView.adapter = adapter
             }
         } else if (orderparam == 1) {
-            val orderList = OrderWebData().getOrdersByUserIdAndStatus(User.userId, OrderStatus.PUBLISH)
+            val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.PUBLISH)
             print(orderList)
             val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
             orderListView.adapter = adapter
 
         }
         else {
-            val orderList = OrderWebData().getOrdersByUserIdAndStatus(User.userId, OrderStatus.ACCEPT)
+            val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.ACCEPT)
             val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
             orderListView.adapter = adapter
 

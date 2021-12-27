@@ -37,8 +37,7 @@ class DetailFragment : Fragment() {
             // 加载订单详情
             thread {
                 try {
-                    val orderWebData = OrderWebData()
-                    val order = orderWebData.getOrderByOrderId(orderId)
+                    val order = OrderWebData.getOrderByOrderId(orderId)
                     detailList.add(TitleAndContent("所在年级", order.grade))
                     detailList.add(TitleAndContent("科目", order.subject))
                     detailList.add(TitleAndContent("开始时间", order.startTime))

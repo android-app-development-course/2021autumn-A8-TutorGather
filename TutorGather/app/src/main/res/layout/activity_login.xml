@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/slight_green"
-    tools:context=".personal.LoginActivity"
+    tools:context=".LoginActivity"
     >
 <LinearLayout
     android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <EditText
-                android:id="@+id/edit_username"
+                android:id="@+id/edit_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
