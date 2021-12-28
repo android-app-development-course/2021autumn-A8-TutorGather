@@ -37,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.setOnItemSelectedListener{
             menuitem ->
             when(menuitem.itemId) {
+                R.id.page_header -> {
+                    navController.navigate(R.id.action_global_to_orderHeader)
+                }
                 R.id.page_manger -> {
                     navController.navigate(R.id.action_global_to_orderFragment)
                 }

@@ -22,9 +22,6 @@ class OrderManagerFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        val sentButton: Button = this.findViewById(R.id.Sentbutton)
-//        val acceptButton: Button = this.findViewById(R.id.Acceptbutton)
-//        val completedButton : Button = this.findViewById(R.id.Completedbutton)
         Sentbutton.setOnClickListener{
             replaceFragment(OrderDisplayFragment(1))
         }
