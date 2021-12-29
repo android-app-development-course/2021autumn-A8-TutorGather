@@ -56,6 +56,9 @@ class PersonalFragment : Fragment() {
         val address :TextView = address_content
         address.text = User.address
 
+//        user_name.setOnClickListener {
+//            user_name.text = User.id.toString()
+//        }
     }
 
 }

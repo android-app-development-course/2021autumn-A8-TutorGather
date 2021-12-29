@@ -1,6 +1,7 @@
 package com.example.mobile_phone
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.os.Bundle
 import android.os.StrictMode
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
+import com.example.mobile_phone.SQLite.DatabaseHelper
 import com.example.mobile_phone.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -56,6 +58,15 @@ class MainActivity : AppCompatActivity() {
 
         val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
+        val dbHelper = DatabaseHelper(this,"localChats.db",5)
+        val db = dbHelper.writableDatabase
+        val value1 = ContentValues().apply {
+            put("from_id","2")
+            put("from_name","周老师")
+            put("messages","您什么时候有时间呢？")
+        }
+        db.insert("LatestChats",null,value1)
+
     }
 
     private fun replaceFragment(fragment: Fragment){
