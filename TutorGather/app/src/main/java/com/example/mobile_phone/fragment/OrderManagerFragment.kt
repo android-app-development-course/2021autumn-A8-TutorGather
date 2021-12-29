@@ -20,23 +20,31 @@ class OrderManagerFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Sentbutton.setOnClickListener{
+            print(123)
             replaceFragment(OrderDisplayFragment(1))
         }
         Acceptbutton.setOnClickListener{
+            print(123545465)
             replaceFragment(OrderDisplayFragment(1))
         }
         Completedbutton.setOnClickListener{
+            print(1235465)
             replaceFragment(OrderDisplayFragment(1))
         }
     }
 
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager= activity?.supportFragmentManager
+        print(4)
         val transaction = fragmentManager?.beginTransaction()
+        print(5)
         if (transaction != null) {
+            print(8)
             transaction.replace(R.id.orderdetail,fragment)
             transaction.commit()
+            print(7)
         }
+        print(6)
     }
 }
 
