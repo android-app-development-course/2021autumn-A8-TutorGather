@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.OrderAdapter
 import com.example.mobile_phone.bean.Order

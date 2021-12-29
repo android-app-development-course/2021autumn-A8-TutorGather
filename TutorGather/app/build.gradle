@@ -18,6 +18,7 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -42,7 +43,7 @@ repositories {
 }
 
 dependencies {
-
+    implementation "androidx.multidex:multidex:2.0.1"
     implementation group: 'androidx.fragment', name: 'fragment-ktx', version: '1.4.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'

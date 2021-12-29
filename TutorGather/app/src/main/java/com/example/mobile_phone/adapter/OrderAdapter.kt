@@ -1,24 +1,18 @@
 package com.example.mobile_phone.adapter
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.os.Bundle
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResult
-import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
-import androidx.fragment.app.setFragmentResult
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobile_phone.R
 import com.example.mobile_phone.bean.Order
-import kotlinx.android.synthetic.main.fragment_header.view.*
 
 class OrderAdapter(private val data:List<Order>, private val fragment:Fragment) : RecyclerView.Adapter<OrderAdapter.ViewHolder>() {
     /**

@@ -2,11 +2,7 @@ package com.example.mobile_phone.webData
 
 import android.content.ContentValues.TAG
 import android.util.Log
-import com.example.mobile_phone.bean.Order
 import com.example.mobile_phone.bean.User
-import com.example.mobile_phone.bean.User.id
-import com.example.mobile_phone.bean.User.name
-import com.example.mobile_phone.bean.User.password
 import com.google.gson.Gson
 import okhttp3.FormBody
 import org.json.JSONObject
