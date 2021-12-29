@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.page_manger -> {
                     navController.navigate(R.id.action_global_to_orderFragment)
                 }
+                R.id.page_message -> {
+                    navController.navigate(R.id.action_global_messagesFragment)
+                }
                 R.id.page_user -> {
                     navController.navigate(R.id.action_global_personalFragment)
                 }

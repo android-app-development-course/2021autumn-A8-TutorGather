@@ -3,4 +3,5 @@
     <dimen name="order_labelTextSize">20dp</dimen>
     <dimen name="order_inputWidth">320dp</dimen>
     <dimen name="order_inputHeight">50dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>
