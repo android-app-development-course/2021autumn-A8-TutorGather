@@ -39,4 +39,5 @@
     <color name="blue_cadet">#FF38A3A5</color>
     <color name="blue_dark">#FF22577A</color>
     <color name="slight_green">#FFF6FEF7</color>
+    <color name="gray">#FFBFBFBF</color>
 </resources>

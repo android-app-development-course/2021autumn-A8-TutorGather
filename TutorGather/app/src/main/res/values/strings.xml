@@ -43,10 +43,11 @@
 
     <string name="info_id">身份</string>
     <string name="info_address">地址</string>
-    <string name="info_gift">积分</string>
-    <string name="info_help">帮助</string>
+    <string name="info_gift">积分&amp;优惠券</string>
+    <string name="info_help">帮助中心</string>
     <string name="info_pay">支付</string>
     <string name="info_settings">设置</string>
+    <string name="logout">退出登录</string>
 
     <string name="input_phone_num">请输入手机号</string>
     <string name="input_password">请输入密码</string>
