@@ -1,5 +1,6 @@
 package com.example.mobile_phone.fragment
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.BannerAdapter
 import com.example.mobile_phone.adapter.OrderAdapter
@@ -38,6 +40,7 @@ class HeaderFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun updateOrderList() {
         thread {
             if (ordersList.isEmpty()) {
@@ -63,9 +66,10 @@ class HeaderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        orderAdapter = OrderAdapter(this.requireContext(), R.layout.order_item, ordersList)
+        orderAdapter = OrderAdapter(ordersList, this)
         // 绑定订单列表
         binding.orderListView.adapter = orderAdapter
+        binding.orderListView.layoutManager = LinearLayoutManager(this.requireContext())
         // 绑定发布按钮跳转
         binding.buttonPublish.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_header_to_fragment_publish)
@@ -92,11 +96,12 @@ class HeaderFragment : Fragment() {
                 updateOrderList()
             }
         }
-        // 绑定orderList的点击事件
-        binding.orderListView.setOnItemClickListener { parent, _view, position, id ->
-            setFragmentResult("requestKey", bundleOf("orderId" to ordersList[position].id))
-            findNavController().navigate(R.id.action_fragment_header_to_fragment_detail)
-        }
+
+//        { _view ->
+//            setFragmentResult("requestKey", bundleOf("orderId" to ordersList[position].id))
+//            findNavController().navigate(R.id.action_fragment_header_to_fragment_detail)
+//
+//        }
     }
 
     override fun onDestroyView() {

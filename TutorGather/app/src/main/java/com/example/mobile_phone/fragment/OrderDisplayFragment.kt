@@ -13,6 +13,7 @@ import com.example.mobile_phone.bean.User
 import com.example.mobile_phone.webData.OrderWebData
 import kotlinx.android.synthetic.main.order_detail_fragement.*
 import com.example.mobile_phone.enum.OrderStatus
+import kotlinx.android.synthetic.main.fragment_header.*
 
 class OrderDisplayFragment(i: Int) : Fragment() {
     private var orderparam = i;
@@ -31,31 +32,30 @@ class OrderDisplayFragment(i: Int) : Fragment() {
                 val orderList = listOf(
                     Order(subject = "该身份权限访问！"),
                 )
-                val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
-                orderListView.adapter = adapter
+                val adapter = OrderAdapter(orderList, this)
+                orderMangerListView.adapter = adapter
 
-            } else {
+            }
+            else {
                 print(User.id)
                 val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.DRAFT)
                 print(orderList)
-                val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
-                orderListView.adapter = adapter
+                val adapter = OrderAdapter(orderList, this)
+                orderMangerListView.adapter = adapter
             }
-        } else if (orderparam == 1) {
+        }
+        else if (orderparam == 1) {
             val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.PUBLISH)
             print(orderList)
-            val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
-            orderListView.adapter = adapter
+            val adapter = OrderAdapter(orderList, this)
+            orderMangerListView.adapter = adapter
 
         }
         else {
             val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.ACCEPT)
-            val adapter = OrderAdapter(this.requireContext(), R.layout.order_item, orderList)
+            val adapter = OrderAdapter(orderList, this)
             orderListView.adapter = adapter
 
-        }
-        orderListView.setOnItemClickListener { _, _, _, _ ->
-            findNavController().navigate(R.id.action_fragment_header_to_fragment_publish)
         }
     }
 }
