@@ -95,11 +95,6 @@ class HeaderFragment : Fragment() {
             }
         }
 
-//        { _view ->
-//            setFragmentResult("requestKey", bundleOf("orderId" to ordersList[position].id))
-//            findNavController().navigate(R.id.action_fragment_header_to_fragment_detail)
-//
-//        }
     }
 
     override fun onDestroyView() {

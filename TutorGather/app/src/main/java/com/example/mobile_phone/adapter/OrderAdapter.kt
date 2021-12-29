@@ -43,7 +43,10 @@ class OrderAdapter(private val data:List<Order>, private val fragment:Fragment) 
         viewHolder.itemView.setOnClickListener{
             val position = viewHolder.adapterPosition
             fragment.setFragmentResult("requestKey", bundleOf("orderId" to data[position].id))
-            findNavController(view).navigate(R.id.action_fragment_header_to_fragment_detail)
+            if(view.id == R.id.fragment_header)
+                findNavController(view).navigate(R.id.action_fragment_header_to_fragment_detail)
+            else
+                findNavController(view).navigate(R.id.action_global_fragment_detail)
         }
 
         return viewHolder

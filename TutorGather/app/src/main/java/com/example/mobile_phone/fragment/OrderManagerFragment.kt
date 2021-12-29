@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mobile_phone.R
+import com.example.mobile_phone.enum.OrderStatus
 import kotlinx.android.synthetic.main.order_select_fragment.*
 
 class OrderManagerFragment:Fragment() {
@@ -20,16 +21,16 @@ class OrderManagerFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Sentbutton.setOnClickListener{
-            print(123)
-            replaceFragment(OrderDisplayFragment(1))
+//            print(123)
+            replaceFragment(OrderDisplayFragment(OrderStatus.PUBLISH))
         }
         Acceptbutton.setOnClickListener{
-            print(123545465)
-            replaceFragment(OrderDisplayFragment(1))
+//            print(123545465)
+            replaceFragment(OrderDisplayFragment(OrderStatus.ACCEPT))
         }
         Completedbutton.setOnClickListener{
-            print(1235465)
-            replaceFragment(OrderDisplayFragment(1))
+//            print(1235465)
+            replaceFragment(OrderDisplayFragment(OrderStatus.FINISH))
         }
     }
 

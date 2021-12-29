@@ -3,8 +3,6 @@ package com.example.mobile_phone.webData
 import com.example.mobile_phone.bean.Order
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import com.example.mobile_phone.enum.OrderStatus
 import okhttp3.FormBody
 
@@ -65,7 +63,7 @@ object OrderWebData: HttpConnect<Order>() {
             .add("detail", order.detail)
             .add("expense", order.expense)
             .add("phone", order.phone)
-            .add("belongId", order.belongId.toString())
+            .add("belongId", order.belongID.toString())
             .build()
         val responseData = postRequest("$urlPrefix/publishOrder", formBody)
         if (responseData != null) {
@@ -79,11 +77,11 @@ object OrderWebData: HttpConnect<Order>() {
     }
 
     fun acceptOrder(orderId: Int, teacherId: Int) {
-
+        getRequest("$urlPrefix/acceptOrder?orderId=$orderId&teacherId=$teacherId")
     }
 
     fun revokeOrder(orderId: Int) {
-
+        getRequest("$urlPrefix/revokeOrder?orderId=$orderId")
     }
 
 }

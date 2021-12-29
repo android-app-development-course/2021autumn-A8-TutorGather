@@ -1,8 +1,13 @@
 package com.example.mobile_phone.enum
 
-enum class OrderStatus(i: Int) {
+import java.sql.Types
+
+enum class OrderStatus(val value: Int) {
     DRAFT(0),
     PUBLISH(1),
     ACCEPT(2),
-    FINISH(3)
+    FINISH(3);
+    companion object {
+        fun fromInt(value: Int) = OrderStatus.values().first { it.value == value }
+    }
 }

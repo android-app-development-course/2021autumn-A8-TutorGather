@@ -50,6 +50,6 @@
         android:id="@+id/chatFragment"
         android:name="com.example.mobile_phone.fragment.ChatFragment"
         android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_chat" /><action android:id="@+id/action_global_fragment_detail" app:destination="@id/fragment_detail"/>
 
 </navigation>

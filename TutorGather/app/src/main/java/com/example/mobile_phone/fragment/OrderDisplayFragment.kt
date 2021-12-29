@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_header.*
 import kotlinx.android.synthetic.main.fragment_orderdetail.*
 import kotlinx.coroutines.newFixedThreadPoolContext
 
-class OrderDisplayFragment(i: Int) : Fragment() {
+class OrderDisplayFragment(i: OrderStatus) : Fragment() {
     private var orderparam = i;
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +29,7 @@ class OrderDisplayFragment(i: Int) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (orderparam == 0) {
+        if (orderparam == OrderStatus.PUBLISH) {
             if (User.canBeTeacher) {
                 val orderList = listOf(
                     Order(subject = "该身份权限访问！"),
@@ -41,7 +41,7 @@ class OrderDisplayFragment(i: Int) : Fragment() {
             }
             else {
                 print(User.id)
-                val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.DRAFT)
+                val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.PUBLISH)
                 print(orderList)
                 val adapter = OrderAdapter(orderList, this)
                 orderMangerListView.layoutManager = LinearLayoutManager(this.requireContext())
@@ -49,8 +49,8 @@ class OrderDisplayFragment(i: Int) : Fragment() {
                 orderMangerListView.adapter = adapter
             }
         }
-        else if (orderparam == 1) {
-            val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.PUBLISH)
+        else if (orderparam == OrderStatus.ACCEPT) {
+            val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.ACCEPT)
             print(orderList)
             val adapter = OrderAdapter(orderList, this)
             orderMangerListView.layoutManager = LinearLayoutManager(this.requireContext())
@@ -58,7 +58,9 @@ class OrderDisplayFragment(i: Int) : Fragment() {
 
         }
         else {
-            val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.ACCEPT)
+            val orderList = OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.FINISH)
+            if(orderList.isEmpty())
+                return
             val adapter = OrderAdapter(orderList, this)
             orderMangerListView.layoutManager = LinearLayoutManager(this.requireContext())
             orderListView.adapter = adapter

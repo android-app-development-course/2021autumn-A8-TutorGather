@@ -6,13 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.DetailAdapter
-import com.example.mobile_phone.bean.Order
 import com.example.mobile_phone.bean.TitleAndContent
+import com.example.mobile_phone.bean.User
 import com.example.mobile_phone.databinding.FragmentOrderdetailBinding
+import com.example.mobile_phone.enum.OrderStatus
+import com.example.mobile_phone.enum.UserStatus
 import com.example.mobile_phone.webData.OrderWebData
 import kotlin.concurrent.thread
 
@@ -46,10 +48,36 @@ class DetailFragment : Fragment() {
                     if (this.activity == null)
                         println("this activity is null")
                     else {
-                        println("费用: ${order.expense}")
-                        println("detail is change")
+//                        println("费用: ${order.expense}")
+//                        println("detail is change")
                         this.activity?.runOnUiThread {
                             detailAdapter.notifyDataSetChanged()
+                            println(order)
+                            // 是自己的订单时, 则只能撤销,  或者该当前身份是老师且teacherId为UserId, 也能撤销
+                            if(OrderStatus.fromInt(order.status) == OrderStatus.ACCEPT && (order.belongID == User.id || (User.id == order.teacherID && User.status == UserStatus.TEACHER))) {
+                                binding.buttonDetail.text = "撤销订单"
+                                binding.buttonDetail.setOnClickListener {
+                                    thread {
+                                        OrderWebData.revokeOrder(order.id)
+                                    }
+                                    Toast.makeText(this.requireContext(), "撤销成功", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            // 身份为老师
+                            else if(OrderStatus.fromInt(order.status) == OrderStatus.PUBLISH && User.status == UserStatus.TEACHER) {
+                                binding.buttonDetail.text = "接受订单"
+                                binding.buttonDetail.setOnClickListener {
+                                    thread {
+                                        OrderWebData.acceptOrder(order.id, User.id)
+                                    }
+                                    Toast.makeText(this.requireContext(), "接受成功", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            // 其余情况关闭按钮
+                            else {
+                                binding.buttonDetail.visibility = View.GONE
+                            }
+
                         }
                     }
                 }
@@ -74,6 +102,7 @@ class DetailFragment : Fragment() {
         detailAdapter = DetailAdapter(detailList)
         binding.recyclerViewOrderDetail.adapter = detailAdapter
         binding.recyclerViewOrderDetail.layoutManager = LinearLayoutManager(this.requireContext())
+
     }
 
 
