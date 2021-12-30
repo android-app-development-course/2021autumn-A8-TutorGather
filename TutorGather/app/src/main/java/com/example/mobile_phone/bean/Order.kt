@@ -17,5 +17,5 @@ data class Order(
     val phone: String="",
     val belongID: Int=0,
     val teacherID: Int=0,
-    val imageResourceId: Int=R.mipmap.ic_launcher,
+    var imageResourceId: Int=R.mipmap.ic_launcher,
 )

@@ -43,8 +43,12 @@ class HeaderFragment : Fragment() {
         thread {
             if (ordersList.isEmpty()) {
                 try {
+                    var index = 0
+                    val portrait= listOf<Int>(R.drawable.portrait_1, R.drawable.portrait_2, R.drawable.portrait_3, R.drawable.portrait_4, R.drawable.portrait_5)
                     // 不能修改ordersList的指向
                     for (order in OrderWebData.getRandomOrders(5)) {
+                        order.imageResourceId = portrait[index]
+                        index += 1
                         ordersList.add(order)
                     }
                     if (this.activity == null)

@@ -27,7 +27,7 @@
     <fragment
             android:id="@+id/orderManagerFragment"
             android:name="com.example.mobile_phone.fragment.OrderManagerFragment"
-            android:label="OrderManagerFragment" />
+            android:label="订单管理" />
 
     <action android:id="@+id/action_global_to_orderFragment"
             app:destination="@id/orderManagerFragment"/>
@@ -37,19 +37,23 @@
     <fragment
         android:id="@+id/personalFragment"
         android:name="com.example.mobile_phone.fragment.PersonalFragment"
-        android:label="fragment_personal"
+        android:label="个人信息"
         tools:layout="@layout/fragment_personal" />
     <action android:id="@+id/action_global_personalFragment" app:destination="@id/personalFragment" />
     <fragment
         android:id="@+id/messagesFragment"
         android:name="com.example.mobile_phone.fragment.MessagesFragment"
-        android:label="fragment_messages"
-        tools:layout="@layout/fragment_messages" />
+        android:label="消息管理"
+        tools:layout="@layout/fragment_messages" >
+        <action
+            android:id="@+id/action_messagesFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
     <action android:id="@+id/action_global_messagesFragment" app:destination="@id/messagesFragment" />
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.example.mobile_phone.fragment.ChatFragment"
-        android:label="fragment_chat"
+        android:label="聊天"
         tools:layout="@layout/fragment_chat" /><action android:id="@+id/action_global_fragment_detail" app:destination="@id/fragment_detail"/>
 
 </navigation>

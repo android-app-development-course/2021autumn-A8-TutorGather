@@ -111,12 +111,12 @@
                 android:orientation="vertical">
 
             <Button
+                    android:backgroundTint="@color/green_medium"
                     android:id="@+id/button_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/btn_login"
-                    android:backgroundTint="@color/green_medium"
                     app:cornerRadius="48sp" />
 
             <Button

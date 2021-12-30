@@ -96,21 +96,6 @@
                 app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-                android:id="@+id/imageViewHintSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="132dp"
-                android:layout_marginLeft="132dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewLabelSubject"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.094"
-                app:layout_constraintStart_toEndOf="@+id/textViewLabelSubject"
-                app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextViewGrade"
-                app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/baseline_live_help_green_500_24dp" />
-
-        <ImageView
                 android:id="@+id/imageViewLocation"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
