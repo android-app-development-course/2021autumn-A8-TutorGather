@@ -32,6 +32,7 @@ class DetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Use the Kotlin extension in the fragment-ktx artifact
+        println("requestKey")
         setFragmentResultListener("requestKey") { requestKey, bundle ->
             orderId  = bundle.getInt("orderId")
             // 加载订单详情
@@ -77,7 +78,6 @@ class DetailFragment : Fragment() {
                             else {
                                 binding.buttonDetail.visibility = View.GONE
                             }
-
                         }
                     }
                 }

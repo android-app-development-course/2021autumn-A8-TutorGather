@@ -30,7 +30,6 @@ class OrderAdapter(private val data:List<Order>, private val fragment:Fragment) 
             userImage = view.findViewById(R.id.imageViewUser)
             abstract =  view.findViewById(R.id.textViewAbstract)
             grade = view.findViewById(R.id.textViewGrade)
-
         }
     }
 
@@ -42,16 +41,12 @@ class OrderAdapter(private val data:List<Order>, private val fragment:Fragment) 
 
         viewHolder.itemView.setOnClickListener{
             val position = viewHolder.adapterPosition
-            fragment.setFragmentResult("requestKey", bundleOf("orderId" to data[position].id))
-            if(view.id == R.id.fragment_header)
-                findNavController(view).navigate(R.id.action_fragment_header_to_fragment_detail)
-            else
-                findNavController(view).navigate(R.id.action_global_fragment_detail)
+            fragment.parentFragmentManager.setFragmentResult("requestKey", bundleOf("orderId" to data[position].id))
+            findNavController(view).navigate(R.id.action_global_fragment_detail)
         }
 
         return viewHolder
     }
-
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // 获取当前order的数据 并放置order信息到item中

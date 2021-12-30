@@ -54,8 +54,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-
+        // 允许在主线程进行网络请求
         val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
         val dbHelper = DatabaseHelper(this,"localChats.db",5)
@@ -67,13 +66,6 @@ class MainActivity : AppCompatActivity() {
         }
         db.insert("LatestChats",null,value1)
 
-    }
-
-    private fun replaceFragment(fragment: Fragment){
-        val fragmentManager=supportFragmentManager
-        val transaction =fragmentManager.beginTransaction()
-        transaction.replace(R.id.orderdetail,fragment)
-        transaction.commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

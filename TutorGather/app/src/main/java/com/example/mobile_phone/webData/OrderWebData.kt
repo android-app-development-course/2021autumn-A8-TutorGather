@@ -1,6 +1,10 @@
 package com.example.mobile_phone.webData
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import com.example.mobile_phone.bean.Order
+import com.example.mobile_phone.bean.User
+import com.example.mobile_phone.bean.User.status
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.example.mobile_phone.enum.OrderStatus
@@ -25,25 +29,31 @@ object OrderWebData: HttpConnect<Order>() {
         return listOf()
     }
 
-    fun getOrdersByUserIdAndStatus(userId: Int, status: OrderStatus): List<Order> {
-        val responseData = getRequest("$urlPrefix/getOrders?number=$userId&status=$status")
+    fun getOrdersByUserIdAndStatus(userId: Int, orderStatus: OrderStatus): List<Order> {
+        val status = orderStatus.toInt()
+        val responseData = getRequest("$urlPrefix/getOrders?userId=$userId&status=$status")
         if (responseData != null) {
             println("getOrdersByUserIdAndStatus: $responseData")
             return parseJSONWithGSON(responseData)
         }
         println("userId $userId, status: $status orders is None")
         return listOf()
-
     }
 
-    fun getOrdersByTeacherIdAndStatus(teacherId: Int, status: OrderStatus): List<Order> {
-        TODO()
+    fun getOrdersByTeacherIdAndStatus(teacherId: Int, orderStatus: OrderStatus): List<Order> {
+        val status = orderStatus.toInt()
+        val responseData = getRequest("$urlPrefix/getOrders?teacherId=$teacherId&status=$status")
+        if (responseData != null) {
+            println("getOrdersByUserIdAndStatus: $responseData")
+            return parseJSONWithGSON(responseData)
+        }
+        println("userId $teacherId, status: $status orders is None")
+        return listOf()
     }
 
     fun getOrderByOrderId(orderId: Int): Order {
         val responseData = getRequest("$urlPrefix/getOrder?orderId=$orderId")
         if (responseData != null) {
-//            Log.i(TAG, "getOrderById: $responseData, data: $responseData, \norderId$orderId")
             val gson = Gson()
             return gson.fromJson(responseData, Order::class.java)
         }
@@ -52,7 +62,6 @@ object OrderWebData: HttpConnect<Order>() {
     }
 
     fun publishOrder(order: Order): Boolean {
-        println(order)
         val formBody = FormBody.Builder()
             .add("subject", order.subject)
             .add("grade", order.grade)
@@ -63,10 +72,13 @@ object OrderWebData: HttpConnect<Order>() {
             .add("detail", order.detail)
             .add("expense", order.expense)
             .add("phone", order.phone)
-            .add("belongId", order.belongID.toString())
+            .add("belongId", User.id.toString())
             .build()
         val responseData = postRequest("$urlPrefix/publishOrder", formBody)
         if (responseData != null) {
+            if(responseData.contains("error")){
+                return false
+            }
             println("publish : $responseData")
             return true
         } else {

@@ -1,15 +1,26 @@
 package com.example.mobile_phone.fragment
 
+import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobile_phone.R
+import com.example.mobile_phone.adapter.OrderAdapter
+import com.example.mobile_phone.bean.Order
+import com.example.mobile_phone.bean.User
 import com.example.mobile_phone.enum.OrderStatus
-import kotlinx.android.synthetic.main.order_select_fragment.*
+import com.example.mobile_phone.enum.UserStatus
+import com.example.mobile_phone.webData.OrderWebData
+import kotlinx.android.synthetic.main.fragment_order_manager.*
 
 class OrderManagerFragment:Fragment() {
+    private lateinit var orderList:ArrayList<Order>
+    private lateinit var adapter: OrderAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,31 +32,48 @@ class OrderManagerFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Sentbutton.setOnClickListener{
-//            print(123)
-            replaceFragment(OrderDisplayFragment(OrderStatus.PUBLISH))
+            replaceStatus(OrderStatus.PUBLISH)
         }
         Acceptbutton.setOnClickListener{
-//            print(123545465)
-            replaceFragment(OrderDisplayFragment(OrderStatus.ACCEPT))
+            replaceStatus(OrderStatus.ACCEPT)
         }
         Completedbutton.setOnClickListener{
-//            print(1235465)
-            replaceFragment(OrderDisplayFragment(OrderStatus.FINISH))
+            replaceStatus(OrderStatus.FINISH)
         }
+        orderList = ArrayList(OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.PUBLISH))
+        adapter = OrderAdapter(orderList, this)
+        orderMangerListView.layoutManager = LinearLayoutManager(this.requireContext())
+        orderMangerListView.adapter = adapter
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager= activity?.supportFragmentManager
-        print(4)
-        val transaction = fragmentManager?.beginTransaction()
-        print(5)
-        if (transaction != null) {
-            print(8)
-            transaction.replace(R.id.orderdetail,fragment)
-            transaction.commit()
-            print(7)
+    @SuppressLint("NotifyDataSetChanged")
+    private fun replaceStatus(status: OrderStatus) {
+        orderList.clear()
+        if(User.status == UserStatus.PARENT) {
+            when (status) {
+                // 先清空, 再add
+                OrderStatus.ACCEPT -> putIntoOrderList(OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.ACCEPT))
+                OrderStatus.PUBLISH -> putIntoOrderList(OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.PUBLISH))
+                OrderStatus.FINISH -> putIntoOrderList(OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.FINISH))
+                else -> Log.e(TAG, "replaceStatus: error status not exist",)
+            }
         }
-        print(6)
+        // 后端接口还没写
+        else {
+            when (status) {
+                OrderStatus.ACCEPT -> putIntoOrderList(OrderWebData.getOrdersByTeacherIdAndStatus(User.id, OrderStatus.ACCEPT))
+                OrderStatus.PUBLISH -> putIntoOrderList(OrderWebData.getOrdersByTeacherIdAndStatus(User.id, OrderStatus.PUBLISH))
+                OrderStatus.FINISH -> putIntoOrderList(OrderWebData.getOrdersByTeacherIdAndStatus(User.id, OrderStatus.FINISH))
+                else -> Log.e(TAG, "replaceStatus: error status not exist",)
+            }
+        }
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun putIntoOrderList(list: List<Order>) {
+        for(order in list){
+            orderList.add(order)
+        }
     }
 }
 

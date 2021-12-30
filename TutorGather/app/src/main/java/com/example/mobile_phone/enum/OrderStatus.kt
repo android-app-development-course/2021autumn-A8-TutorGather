@@ -10,4 +10,7 @@ enum class OrderStatus(val value: Int) {
     companion object {
         fun fromInt(value: Int) = OrderStatus.values().first { it.value == value }
     }
+    fun toInt(): Int {
+        return this.value
+    }
 }
