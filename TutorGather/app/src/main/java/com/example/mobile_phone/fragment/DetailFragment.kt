@@ -16,6 +16,7 @@ import com.example.mobile_phone.databinding.FragmentOrderdetailBinding
 import com.example.mobile_phone.enum.OrderStatus
 import com.example.mobile_phone.enum.UserStatus
 import com.example.mobile_phone.webData.OrderWebData
+import com.example.mobile_phone.webData.UserWebData
 import kotlin.concurrent.thread
 
 /**
@@ -46,6 +47,12 @@ class DetailFragment : Fragment() {
                     detailList.add(TitleAndContent("地址", order.address))
                     detailList.add(TitleAndContent("详情", order.detail))
                     detailList.add(TitleAndContent("费用", order.expense))
+                    // 若订单为已接收或已完成
+                    if(OrderStatus.fromInt(order.status) != OrderStatus.PUBLISH){
+                        val teacherJson = UserWebData.getUserJSONFromUserId(order.teacherID)
+                        detailList.add(TitleAndContent("老师姓名", teacherJson.getString("name")))
+                        detailList.add(TitleAndContent("老师电话", teacherJson.getString("phone")))
+                    }
                     if (this.activity == null)
                         println("this activity is null")
                     else {

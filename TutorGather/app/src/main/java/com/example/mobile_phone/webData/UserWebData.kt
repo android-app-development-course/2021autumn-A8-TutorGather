@@ -3,7 +3,6 @@ package com.example.mobile_phone.webData
 import android.content.ContentValues.TAG
 import android.util.Log
 import com.example.mobile_phone.bean.User
-import com.google.gson.Gson
 import okhttp3.FormBody
 import org.json.JSONObject
 
@@ -25,11 +24,17 @@ object UserWebData: HttpConnect<User>() {
             true
         }
     }
+    fun getUserJSONFromUserId(userId:Int):JSONObject {
+        val responseData = getRequest("$urlPrefix/getUser?userId=${userId}")
+        if(responseData == null || responseData.contains("error")){
+            Log.e(TAG, "getUserNameFromUserId: network error or $userId is not exist")
+        }
+        return JSONObject(responseData!!)
+    }
 
     fun login(phone:String, password:String):Boolean {
         val responseData = getRequest("$urlPrefix/getUser?phone=${phone}")
         Log.i(TAG, "login: $responseData")
-        val gson = Gson()
         if(responseData == null){
             return false
         }

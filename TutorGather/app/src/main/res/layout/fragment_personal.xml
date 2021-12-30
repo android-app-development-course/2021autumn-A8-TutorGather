@@ -1,264 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.PersonalFragment">
+        android:fillViewport="true">
 
-
-    <LinearLayout
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            tools:context=".fragment.PersonalFragment">
+
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                >
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <ImageButton
-                    android:background="@color/white"
-                    android:id="@+id/profile_image"
-                    android:layout_width="wrap_content"
+            <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/avatars" />
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
 
-            <TextView
-                    android:id="@+id/name_content"
-                    android:layout_width="wrap_content"
+                <ImageButton
+                        android:background="@color/white"
+                        android:id="@+id/profile_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        tools:src="@tools:sample/avatars" />
+
+                <TextView
+                        android:id="@+id/name_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:textSize="28sp"
+                        android:text="Name" />
+            </LinearLayout>
+
+            <TableLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:textSize="28sp"
-                    android:text="Name" />
-        </LinearLayout>
 
-        <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
 
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp">
 
-            <TableRow
+                    <TextView
+                            android:id="@+id/personal_id_name"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="@string/info_id"
+                            android:textColor="@color/gray"
+                            android:textSize="20sp" />
+
+                    <TextView
+                            android:id="@+id/id_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="老师"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_baseline_group_24" />
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp">
+
+                    <TextView
+                            android:id="@+id/personal_address_name"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="@string/info_address"
+                            android:textColor="@color/gray"
+                            android:textSize="20sp" />
+
+                    <TextView
+                            android:id="@+id/address_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="华南师范大学"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_baseline_home_work_24" />
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp">
+
+                    <TextView
+                            android:id="@+id/text_gift"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="@string/info_gift"
+                            android:textColor="@color/gray"
+                            android:textSize="20sp" />
+
+                    <TextView
+                            android:id="@+id/text_gift_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_card_giftcard_24" />
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp">
+
+                    <TextView
+                            android:id="@+id/text_help"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="@string/info_help"
+                            android:textColor="@color/gray"
+                            android:textSize="20sp" />
+
+                    <TextView
+                            android:id="@+id/text_help_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_baseline_help_24" />
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp">
+
+                    <TextView
+                            android:id="@+id/text_pay"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="@string/info_pay"
+                            android:textColor="@color/gray"
+                            android:textSize="20sp" />
+
+                    <TextView
+                            android:id="@+id/text_pay_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    <ImageView
+                            android:id="@+id/imageView12"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_baseline_payment_24" />
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:id="@+id/text_settings"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="@string/info_settings"
+                            android:textColor="@color/gray"
+                            android:textSize="20sp" />
+
+                    <TextView
+                            android:id="@+id/text_setting_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    <ImageView
+                            android:id="@+id/imageView13"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_baseline_settings_24" />
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp">
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp">
 
-                <TextView
-                        android:id="@+id/personal_id_name"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="@string/info_id"
-                        android:textColor="@color/gray"
-                        android:textSize="20sp" />
-
-                <TextView
-                        android:id="@+id/id_content"
+                <Button
+                        android:id="@+id/button_change_identity"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="老师"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:layout_height="match_parent"
+                        android:textSize="20dp"
+                        android:text="更换身份" />
 
-                <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_baseline_group_24" />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp">
-
-                <TextView
-                        android:id="@+id/personal_address_name"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="@string/info_address"
-                        android:textColor="@color/gray"
-                        android:textSize="20sp" />
-
-                <TextView
-                        android:id="@+id/address_content"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="华南师范大学"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_baseline_home_work_24" />
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp">
-
-                <TextView
-                        android:id="@+id/text_gift"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="@string/info_gift"
-                        android:textColor="@color/gray"
-                        android:textSize="20sp" />
-
-                <TextView
-                        android:id="@+id/text_gift_content"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_card_giftcard_24" />
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp">
-
-                <TextView
-                        android:id="@+id/text_help"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="@string/info_help"
-                        android:textColor="@color/gray"
-                        android:textSize="20sp" />
-
-                <TextView
-                        android:id="@+id/text_help_content"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_baseline_help_24" />
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp">
-
-                <TextView
-                        android:id="@+id/text_pay"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="@string/info_pay"
-                        android:textColor="@color/gray"
-                        android:textSize="20sp" />
-
-                <TextView
-                        android:id="@+id/text_pay_content"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                <ImageView
-                        android:id="@+id/imageView12"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_baseline_payment_24" />
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:id="@+id/text_settings"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="@string/info_settings"
-                        android:textColor="@color/gray"
-                        android:textSize="20sp" />
-
-                <TextView
-                        android:id="@+id/text_setting_content"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                <ImageView
-                        android:id="@+id/imageView13"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_baseline_settings_24" />
-            </TableRow>
-
-        </TableLayout>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp">
             <Button
-                    android:id="@+id/button_change_identity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="20dp"
-                    android:text="更换身份"
-                    />
+                    android:id="@+id/btn_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/palevioletred"
+                    android:text="@string/logout"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
         </LinearLayout>
-        <Button
-                android:id="@+id/btn_exit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/palevioletred"
-                android:text="@string/logout"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
 
-    </LinearLayout>
-
-</FrameLayout>
+    </FrameLayout>
+</ScrollView>

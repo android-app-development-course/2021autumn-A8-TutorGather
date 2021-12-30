@@ -29,8 +29,11 @@ class OrderManagerFragment:Fragment() {
         return inflater.inflate(R.layout.fragment_order_manager, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        textViewLabelManager.text = "当前身份: ${User.status}"
         Sentbutton.setOnClickListener{
             replaceStatus(OrderStatus.PUBLISH)
         }
@@ -40,7 +43,10 @@ class OrderManagerFragment:Fragment() {
         Completedbutton.setOnClickListener{
             replaceStatus(OrderStatus.FINISH)
         }
-        orderList = ArrayList(OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.PUBLISH))
+        if(User.status == UserStatus.PARENT)
+            orderList = ArrayList(OrderWebData.getOrdersByUserIdAndStatus(User.id, OrderStatus.PUBLISH))
+        else
+            orderList = ArrayList(OrderWebData.getOrdersByTeacherIdAndStatus(User.id, OrderStatus.PUBLISH))
         adapter = OrderAdapter(orderList, this)
         orderMangerListView.layoutManager = LinearLayoutManager(this.requireContext())
         orderMangerListView.adapter = adapter

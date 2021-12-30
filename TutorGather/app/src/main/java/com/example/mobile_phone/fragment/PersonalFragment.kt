@@ -1,6 +1,7 @@
 package com.example.mobile_phone.fragment
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
@@ -13,6 +14,8 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import com.example.mobile_phone.LoginActivity
+import com.example.mobile_phone.MainActivity
 import com.example.mobile_phone.R
 import com.example.mobile_phone.bean.User
 import com.example.mobile_phone.enum.UserStatus
@@ -66,8 +69,12 @@ class PersonalFragment : Fragment() {
                 identification.text = "老师"
             }
         }
-
+        btn_exit.setOnClickListener {
+            val intent = Intent(this.activity, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 
     private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
         // Handle the returned Uri
