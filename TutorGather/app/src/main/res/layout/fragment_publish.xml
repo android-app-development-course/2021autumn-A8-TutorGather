@@ -131,7 +131,7 @@
                 android:layout_height="@dimen/order_inputHeight"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="开始时间 : 结束时间"
+                android:hint="2021:12:20 - 2021:12:30"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/editTextTextLocation"
                 app:layout_constraintHorizontal_bias="1.0"

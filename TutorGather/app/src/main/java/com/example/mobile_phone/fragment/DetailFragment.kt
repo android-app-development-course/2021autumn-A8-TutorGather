@@ -49,8 +49,6 @@ class DetailFragment : Fragment() {
                     if (this.activity == null)
                         println("this activity is null")
                     else {
-//                        println("费用: ${order.expense}")
-//                        println("detail is change")
                         this.activity?.runOnUiThread {
                             detailAdapter.notifyDataSetChanged()
                             println(order)

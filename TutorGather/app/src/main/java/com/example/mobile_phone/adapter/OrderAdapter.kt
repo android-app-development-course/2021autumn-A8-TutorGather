@@ -44,7 +44,6 @@ class OrderAdapter(private val data:List<Order>, private val fragment:Fragment) 
             fragment.parentFragmentManager.setFragmentResult("requestKey", bundleOf("orderId" to data[position].id))
             findNavController(view).navigate(R.id.action_global_fragment_detail)
         }
-
         return viewHolder
     }
 
