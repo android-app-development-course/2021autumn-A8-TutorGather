@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mobile_phone.R
 import com.example.mobile_phone.adapter.OrderAdapter
 import com.example.mobile_phone.bean.Order
@@ -63,7 +64,7 @@ class OrderDisplayFragment(i: OrderStatus) : Fragment() {
                 return
             val adapter = OrderAdapter(orderList, this)
             orderMangerListView.layoutManager = LinearLayoutManager(this.requireContext())
-            orderListView.adapter = adapter
+            orderMangerListView.adapter = adapter
 
         }
     }

@@ -29,12 +29,14 @@ class OrderManagerFragment:Fragment() {
             replaceFragment(OrderDisplayFragment(OrderStatus.ACCEPT))
         }
         Completedbutton.setOnClickListener{
-//            print(1235465)
+            print(1235465)
             replaceFragment(OrderDisplayFragment(OrderStatus.FINISH))
         }
+        replaceFragment(OrderDisplayFragment(OrderStatus.PUBLISH))
     }
 
     private fun replaceFragment(fragment: Fragment) {
+        print(4)
         val fragmentManager= activity?.supportFragmentManager
         print(4)
         val transaction = fragmentManager?.beginTransaction()
