@@ -234,31 +234,68 @@
             </TableRow>
 
         </TableLayout>
+
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp">
-            <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/button_change_identity"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_baseline_change_circle_24" />
+
+                <TextView
+                    android:id="@+id/text_select_sent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
                     android:text="更换身份"
-                    />
+                    android:gravity="center_horizontal" />
 
-        </LinearLayout>
-        <Button
-                android:id="@+id/btn_exit"
-                android:layout_width="match_parent"
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/palevioletred"
-                android:text="@string/logout"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-    </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_baseline_logout_24" />
+
+                <TextView
+                    android:id="@+id/text_select_accept"
+                    android:textColor="@color/mediumvioletred"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    android:text="退出登录"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
 
 </FrameLayout>
