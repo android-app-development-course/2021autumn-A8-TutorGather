@@ -5,66 +5,88 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical">
-    <TextView
-            android:id="@+id/textViewLabelManager"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
-
-            android:textSize="@dimen/order_labelTextSize"
-            android:text="身份"
-            android:layout_marginStart="20dp" />
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:orientation="horizontal">
 
-        <Button
-                android:id="@+id/Sentbutton"
-                android:layout_width="0dp"
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/Sentbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    app:srcCompat="@drawable/ic_baseline_campaign_24" />
+
+            <TextView
+                    android:id="@+id/text_select_sent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
+                    android:text="已发布"
+                    android:gravity="center_horizontal" />
+
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/Acceptbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_baseline_description_24" />
+
+            <TextView
+                    android:id="@+id/text_select_accept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    android:text="已接单"
+                    android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="已发布"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toStartOf="@id/Acceptbutton"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+                android:orientation="vertical">
 
-        <Button
-                android:id="@+id/Acceptbutton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="已接单"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toTopOf="@+id/Sentbutton"
-                app:layout_constraintEnd_toStartOf="@id/Completedbutton"
-                app:layout_constraintHorizontal_bias="0.447"
-                app:layout_constraintStart_toEndOf="@id/Sentbutton"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/Completedbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_baseline_done_all_24" />
 
-        <Button
-                android:id="@+id/Completedbutton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_below="@+id/toolbar2"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginRight="0dp"
-                android:backgroundTint="@color/white"
-                android:text="已完成"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.447"
-                app:layout_constraintStart_toEndOf="@id/Acceptbutton"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+            <TextView
+                    android:id="@+id/text_select_cpmplet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    android:text="已完成"
+                    android:gravity="center_horizontal" />
 
-
+        </LinearLayout>
     </LinearLayout>
 
 

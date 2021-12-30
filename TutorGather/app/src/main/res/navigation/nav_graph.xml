@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/fragment_header">
 
-    <fragment android:id="@+id/fragment_header" android:name="com.example.mobile_phone.fragment.HeaderFragment" android:label="首页"
+    <fragment android:id="@+id/fragment_header" android:name="com.example.mobile_phone.fragment.HeaderFragment" android:label="琢玉"
             tools:layout="@layout/fragment_header">
 
         <action android:id="@+id/action_fragment_header_to_fragment_publish" app:destination="@id/fragment_publish" />
@@ -42,7 +42,8 @@
         android:id="@+id/personalFragment"
         android:name="com.example.mobile_phone.fragment.PersonalFragment"
         android:label="个人信息"
-        tools:layout="@layout/fragment_personal" />
+        tools:layout="@layout/fragment_personal"
+        />
     <action android:id="@+id/action_global_personalFragment" app:destination="@id/personalFragment" />
     <fragment
         android:id="@+id/messagesFragment"

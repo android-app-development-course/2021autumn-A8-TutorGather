@@ -32,8 +32,7 @@ class OrderManagerFragment:Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        textViewLabelManager.text = "当前身份: ${User.status}"
+        
         Sentbutton.setOnClickListener{
             replaceStatus(OrderStatus.PUBLISH)
         }
