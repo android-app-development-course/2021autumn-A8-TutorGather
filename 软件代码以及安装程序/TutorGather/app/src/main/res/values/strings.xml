@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Mobile_phone</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">记录页面</string>
+    <string name="second_fragment_label">添加你的日记</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="tip_add">添加</string>
+    <string name="tip_title">标题</string>
+    <string name="tip_content">内容</string>
+    <string name="label_save">保存</string>
+
+    <string name="title_login">欢迎登录</string>
+    <string name="title_register">欢迎注册</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="btn_login">登录</string>
+    <string name="btn_register">注册</string>
+    <string name="attempts">剩余尝试次数</string>
+    <string name="conf_password">确认密码</string>
+
+    <string name="error_different_password">两次密码输入不一致。请重试。</string>
+    <string name="error_incorrect_1">用户名或密码错误</string>
+    <string name="error_incorrect_2">请重试</string>
+    <string name="error_blank_username">用户名不能为空</string>
+    <string name="error_blank_password">密码不能为空</string>
+    <string name="error_blank_both">用户名与密码不能为空</string>
+    <string name="error_blank_both_2">请先注册</string>
+    <string name="error_blank_conf_password">请再次输入密码并确认</string>
+    <string name="error_user_exist">用户已存在</string>
+
+    <string name="succ_login">登录成功</string>
+    <string name="succ_register">注册成功</string>
+
+    <string name="alert_title">意外</string>
+    <string name="alert_info">无剩余尝试机会。程序将退出。</string>
+    <string name="alert_ok">好</string>
+
+    <string name="info_id">身份</string>
+    <string name="info_address">地址</string>
+    <string name="info_gift">积分&amp;优惠券</string>
+    <string name="info_help">帮助中心</string>
+    <string name="info_pay">支付</string>
+    <string name="info_settings">设置</string>
+    <string name="logout">退出登录</string>
+
+    <string name="input_phone_num">请输入手机号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_second_password">请再次输入密码</string>
+    <string name="input_name">请输入姓名</string>
+    <string name="input_validation_code">请输入验证码</string>
+    <string name="get_validation_code">获取验证码</string>
+
+    <string name="contract">我已阅读并同意琢玉家教互动平台的《用户协议》和《隐私协议》</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

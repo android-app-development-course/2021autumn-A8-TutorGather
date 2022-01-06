@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.11770833333333333" />
+        <entry key="../../../Library/Android/sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.18478260869565216" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.40729166666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/baseline_access_time_filled_green_500_24dp.xml" value="0.40729166666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/baseline_arrow_circle_down_green_500_24dp.xml" value="0.40729166666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/default_profile_image_128.xml" value="0.40729166666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/ic_launcher_background.xml" value="0.40729166666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/shape.xml" value="0.40729166666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_login.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_main.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_register.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/content_main.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_chat.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_chat_show.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_chat_show_list.xml" value="0.3765625" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_header.xml" value="0.31657608695652173" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_messages.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_order_manager.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_orderdetail.xml" value="0.20729166666666668" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_personal.xml" value="0.31657608695652173" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_publish.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_chatting_left.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_chatting_right.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_message_preview.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_order.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_content.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_detail_fragement.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_select_fragment.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/menu/menu_main.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_main.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/content_main.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_chat.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_header.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_messages.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_order_manager.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_orderdetail.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_personal.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_publish.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_banner.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_chatting_left.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_chatting_right.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_detail.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_message_preview.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_order.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_content.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_detail_fragement.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_select_fragment.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/menu/menu_main.xml" value="0.39114583333333336" />
+        <entry key="..\:/AndroidStudioProjects/edu2/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/menu/menu_top.xml" value="0.39114583333333336" />
+        <entry key="..\:/Projects/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_login.xml" value="0.178125" />
+        <entry key="..\:/Projects/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_register.xml" value="0.21240942028985507" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/shape.xml" value="0.159375" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_main.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/banner_item.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/content_main.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_detail.xml" value="0.6" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_header.xml" value="0.4" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_acceptdetail_fragement.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_completedetail_fragment.xml" value="0.4" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_content.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_detail_fragement.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_item.xml" value="0.4" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_select_fragment.xml" value="0.4" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_sentdetail_fragement.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/2021Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/menu/menu_main.xml" value="0.536" />
+        <entry key="..\:/Users/Warddamn/Desktop/Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/drawable/shape.xml" value="0.159375" />
+        <entry key="..\:/Users/Warddamn/Desktop/Andriod/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_select_fragment.xml" value="0.536" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManager/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/activity_order_manager.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManager/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_header.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManager/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_order_manager.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManager/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_orderdetail.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManager/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_content.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManager/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_item.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManagerNew/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_chat.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManagerNew/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_messages.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManagerNew/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_order_manager.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManagerNew/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_orderdetail.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManagerNew/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/fragment_publish.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManagerNew/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/item_detail.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManagerNew/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_detail_fragement.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Warddamn/Desktop/OrderManagerNew/2021autumn-A8-TutorGather/TutorGather/app/src/main/res/layout/order_select_fragment.xml" value="0.27395833333333336" />
+        <entry key="app/src/main/res/drawable/baseline_tips_and_updates_green_500_24dp.xml" value="0.3446153846153846" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3446153846153846" />
+        <entry key="app/src/main/res/layout-v21/activity_login.xml" value="0.2658514492753623" />
+        <entry key="app/src/main/res/layout-v21/activity_register.xml" value="0.2740036231884058" />
+        <entry key="app/src/main/res/layout-v21/fragment_order_manager.xml" value="0.15260416666666668" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.3328125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/banner.xml" value="0.184375" />
+        <entry key="app/src/main/res/layout/banner_iitem.xml" value="0.37135416666666665" />
+        <entry key="app/src/main/res/layout/banner_item.xml" value="0.14266304347826086" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_header.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_messages.xml" value="0.23143115942028986" />
+        <entry key="app/src/main/res/layout/fragment_orderDetail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_order_manager.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_orderdetail.xml" value="0.2418478260869565" />
+        <entry key="app/src/main/res/layout/fragment_personal.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_publish.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.276268115942029" />
+        <entry key="app/src/main/res/layout/image_item.xml" value="0.184375" />
+        <entry key="app/src/main/res/layout/item_banner.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/item_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_orderdetail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/order_content.xml" value="0.28396739130434784" />
+        <entry key="app/src/main/res/layout/order_detail_fragement.xml" value="0.28396739130434784" />
+        <entry key="app/src/main/res/layout/order_fragment.xml" value="0.28396739130434784" />
+        <entry key="app/src/main/res/layout/order_item.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/order_select_fragment.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/textView_item_detial.xml" value="0.1609375" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3484375" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.41822916666666665" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15925925925925927" />
+        <entry key="app/src/main/res/xml/file_paths.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/xml/network_config.xml" value="0.11702127659574468" />
+      </map>
+    </option>
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android API 30 Platform" project-jdk-type="Android SDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.45577909031518127" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

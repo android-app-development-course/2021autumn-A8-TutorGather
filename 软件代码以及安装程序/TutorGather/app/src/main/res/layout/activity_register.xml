@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/slight_green"
+
+        tools:context=".RegisterActivity">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="32dp">
+
+        <TextView
+                android:id="@+id/tip_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:gravity="center|left"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:text="@string/title_register" />
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="2"
+                android:layout_marginVertical="32dp">
+
+            <TableRow>
+
+                <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_account_circle"
+                        tools:ignore="VectorDrawableCompat" />
+
+
+                <EditText
+                        android:id="@+id/edit_new_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/input_name"
+                        android:layout_marginLeft="5dp"
+                        android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_phone_android"
+                        tools:ignore="VectorDrawableCompat" />
+
+
+                <EditText
+                        android:id="@+id/edit_phone_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/input_phone_num"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:ems="10" />
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_lock"
+                        tools:ignore="VectorDrawableCompat" />
+
+
+                <EditText
+                        android:id="@+id/edit_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:layout_marginLeft="5dp"
+                        android:hint="@string/input_password"
+                        android:inputType="textPassword" />
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_123"
+                        tools:ignore="VectorDrawableCompat" />
+
+
+                <EditText
+                        android:id="@+id/edit_conf_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:layout_marginLeft="5dp"
+                        android:hint="@string/input_second_password"
+                        android:inputType="textPersonName" />
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_code"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+            <EditText
+                    android:id="@+id/edit_valid_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:hint="@string/input_validation_code"
+                    android:layout_weight="1"
+                    android:ems="10" />
+
+            <Button
+                    android:id="@+id/button"
+                    android:backgroundTint="@color/green_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/get_validation_code" />
+
+        </LinearLayout>
+
+
+        <Button
+                android:backgroundTint="@color/green_medium"
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="48dp"
+                android:text="@string/btn_register"
+                app:cornerRadius="48sp" />
+
+        <CheckBox
+                android:id="@+id/check_contract_register"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:text="@string/contract" />
+    </LinearLayout>
+
+
+</LinearLayout>

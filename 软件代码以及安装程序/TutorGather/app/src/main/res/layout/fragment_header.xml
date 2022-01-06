@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/fragment_header"
+            tools:context=".fragment.HeaderFragment">
+
+        <com.to.aboomy.pager2banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="414dp"
+                android:layout_height="180dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="55dp" />
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                >
+            <TableRow>
+
+                <ImageButton
+                    android:id="@+id/imageButtonRenew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+
+                    app:srcCompat="@drawable/baseline_autorenew_green_500_24dp" />
+                <Button
+                        android:textColor="@color/white"
+                        android:id="@+id/buttonPublish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center"
+                        android:layout_marginRight="10dp"
+                        android:text="发布订单"
+                        android:layout_marginEnd="20dp" />
+            </TableRow>
+        </TableLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderListView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</ScrollView>
